@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://example.com/2022/04/26/Docker/Pycharm-Interpret-Config.png">
 <meta property="og:image" content="http://example.com/2022/04/26/Docker/Pycharm-Deployment-Options.png">
 <meta property="article:published_time" content="2022-04-26T07:16:04.000Z">
-<meta property="article:modified_time" content="2022-04-26T07:52:51.078Z">
+<meta property="article:modified_time" content="2022-04-26T08:27:04.133Z">
 <meta property="article:author" content="Deluge Walker">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2022/04/26/Docker/Nvidia-Docker.png">
@@ -297,7 +297,9 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install docker<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>安装nvidia-docker<br>  nvidia-docker是一个可以使用GPU的docker，它在docker上做了一层封装，通过nvidia-docker-plugin，然后调用到docker上，其最终实现的还是在docker的启动命令上携带一些必要的参数。因此在安装nvidia-docker之前，还是需要安装docker的。</p>
-  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34，36，38，.12)，0 2px 10px 0 rgba(34，36，38，.08);" src="Nvidia-Docker.png" srcset="/img/loading.gif" lazyload alt="Nvidia Docker结构" text-align="center">
+  <center>
+  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);" src="Nvidia-Docker.png" srcset="/img/loading.gif" lazyload alt="Nvidia Docker结构" width="60%">
+  </center>
 
 <p>  docker一般都是使用基于CPU的应用，而如果是GPU的话，就需要安装特有的硬件环境，比如需要安装nvidia driver，所以docker容器并不直接支持Nvidia GPU。为了使docker image能很便利的使用Nvidia GPU，从而产生了nvidia-docker，由它来制作nvidia driver的image，这就要求在目标机器上启动container时，确保字符设备以及驱动文件已经被挂载。</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install -y nvidia-docker2<br></code></pre></td></tr></table></figure></li>
@@ -1260,10 +1262,14 @@
 </ul>
 <h3 id="6-4-本地设备-Windows-x2F-Linux-的Pycharm配置"><a href="#6-4-本地设备-Windows-x2F-Linux-的Pycharm配置" class="headerlink" title="6.4 本地设备(Windows&#x2F;Linux)的Pycharm配置"></a>6.4 本地设备(Windows&#x2F;Linux)的Pycharm配置</h3><ul>
 <li><p>在Pycharm中配置Deployment</p>
-  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34，36，38，.12)，0 2px 10px 0 rgba(34，36，38，.08);" src="Pycharm-Deployment.png" srcset="/img/loading.gif" lazyload alt="Pycharm Deployment" text-align="center">
+  <center>
+  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);" src="Pycharm-Deployment.png" srcset="/img/loading.gif" lazyload alt="Pycharm Deployment" width="40%">
+  </center>
 </li>
 <li><p>新建SFTP连接</p>
-  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34，36，38，.12)，0 2px 10px 0 rgba(34，36，38，.08);" src="Pycharm-SFTP-Connection.png" srcset="/img/loading.gif" lazyload alt="Pycharm SFTP Connection" text-align="center">
+  <center>
+  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);" src="Pycharm-SFTP-Connection.png" srcset="/img/loading.gif" lazyload alt="Pycharm SFTP Connection" width="60%">
+  </center>
 
 <p>  其中Host填写宿主机IP地址，Port填写Docker容器转发到宿主机的端口(即刚才的<code>2021</code>)，Usernam填写<code>root</code>，passward即为先前在容器内部设置的<code>12345</code>，选择好Root Path后选择Mappings。</p>
 </li>
@@ -1271,13 +1277,19 @@
 <ul>
 <li>在pycharm中打开<code>Help</code> -&gt; <code>Edit Custom VM Options</code></li>
 <li>在该文件中添加一行<code>-Djava.net.preferIPv6Addresses=true</code></li>
-<li>将<code>-Djava.net.preferIPv4Stack=false</code>由<code>true</code>改为<code>false</code>(备选)  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34，36，38，.12)，0 2px 10px 0 rgba(34，36，38，.08);" src="Pycharm-VM-Options.png" srcset="/img/loading.gif" lazyload alt="Pycharm VM Options" text-align="center"></li>
+<li>将<code>-Djava.net.preferIPv4Stack=false</code>由<code>true</code>改为<code>false</code>(备选)  <center>
+  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);" src="Pycharm-VM-Options.png" srcset="/img/loading.gif" lazyload alt="Pycharm VM Options" width="60%">
+  </center></li>
 <li>重启Pycharm</li>
-<li>按照ipv4的方式新建SFTP连接，Host处填写ipv6地址，不过要使用英文中括号<code>[]</code>包裹  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34，36，38，.12)，0 2px 10px 0 rgba(34，36，38，.08);" src="Pycharm-SFTP-Connection-ipv6.png" srcset="/img/loading.gif" lazyload alt="Pycharm SFTP Connection ipv6" text-align="center"></li>
+<li>按照ipv4的方式新建SFTP连接，Host处填写ipv6地址，不过要使用英文中括号<code>[]</code>包裹  <center>
+  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);" src="Pycharm-SFTP-Connection-ipv6.png" srcset="/img/loading.gif" lazyload alt="Pycharm SFTP Connection ipv6" width="60%">
+  </center></li>
 </ul>
 </li>
 <li><p>映射本地项目至远程服务器</p>
-  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34，36，38，.12)，0 2px 10px 0 rgba(34，36，38，.08);" src="Pycharm-SFTP-Mappings.png" srcset="/img/loading.gif" lazyload alt="Pycharm SFTP Mappings" text-align="center">
+  <center>
+  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);" src="Pycharm-SFTP-Mappings.png" srcset="/img/loading.gif" lazyload alt="Pycharm SFTP Mappings" width="50%">
+  </center>
 
 <p>  Local path是当前项目路径，Deployment path是远程服务器同步的项目路径。选择完毕后确定。Tools -&gt; Deployment -&gt; Browse Remote Host可以查看远程项目文件。</p>
 </li>
@@ -1287,13 +1299,19 @@
    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> python<br><span class="hljs-comment"># 输出如下</span><br>/opt/conda/bin/python<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>添加远程Python解释器<br>   在Pycharm中Add Python Interpret，选择SSH Interpret -&gt; Existing server configuration，选择我们刚才配置的SFTP Deployment，若无法下一步，点击<code>move</code>。接着Interpret路径选择刚才找到的Python解释器位置，同步文件夹(Sync folders)修改为远程项目地址，去掉勾选自动上传。</p>
-   <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34，36，38，.12)，0 2px 10px 0 rgba(34，36，38，.08);" src="Pycharm-Interpret-Add.png" srcset="/img/loading.gif" lazyload alt="Pycharm Interpret Add" text-align="center">
+   <center>
+   <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);" src="Pycharm-Interpret-Add.png" srcset="/img/loading.gif" lazyload alt="Pycharm Interpret Add" width="50%">
+   </center>
 
-   <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34，36，38，.12)，0 2px 10px 0 rgba(34，36，38，.08);" src="Pycharm-Interpret-Config.png" srcset="/img/loading.gif" lazyload alt="Pycharm Interpret Config" text-align="center"></li>
+   <center>
+   <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);" src="Pycharm-Interpret-Config.png" srcset="/img/loading.gif" lazyload alt="Pycharm Interpret Config" width="50%">
+   </center></li>
 </ul>
 </li>
 <li><p>配置上传方式Tools -&gt; Deployment -&gt; Options，将自动上传改为<code>Ctrl+S</code>。</p>
-  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34，36，38，.12)，0 2px 10px 0 rgba(34，36，38，.08);" src="Pycharm-Deployment-Options.png" srcset="/img/loading.gif" lazyload alt="Pycharm Deployment Options" text-align="center"></li>
+  <center>
+  <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);" src="Pycharm-Deployment-Options.png" srcset="/img/loading.gif" lazyload alt="Pycharm Deployment Options" width="50%">
+  </center></li>
 </ul>
 <h2 id="7-Docker使用常见问题"><a href="#7-Docker使用常见问题" class="headerlink" title="7. Docker使用常见问题"></a>7. Docker使用常见问题</h2><h3 id="7-1-Docker容器内用户选择"><a href="#7-1-Docker容器内用户选择" class="headerlink" title="7.1 Docker容器内用户选择"></a>7.1 Docker容器内用户选择</h3><p>Docker在启动时，默认使用的时宿主机的root用户的uid，这就导致两个问题：一时Docker具有宿主机的root权限，安全性很低；二是这样启动的容器如果挂载了宿主机文件，那么在运行时容器所生成的文件在宿主机看来具有root权限，owner是root，这样可能会存在权限上的一些问题。相应的解决方法有两个：</p>
 <ul>
