@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="en" data-default-color-scheme=dark>
 
 
 
@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#2f4154">
+  <meta name="theme-color" content="#2b3f3d">
   <meta name="author" content="Deluge Walker">
   <meta name="keywords" content="">
   
@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/articles/Docker.webp">
 <meta property="article:published_time" content="2021-12-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-27T07:35:40.444Z">
+<meta property="article:modified_time" content="2022-04-27T11:58:54.509Z">
 <meta property="article:author" content="Deluge Walker">
 <meta property="article:tag" content="Technology">
 <meta name="twitter:card" content="summary_large_image">
@@ -69,7 +69,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -88,7 +88,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>DelugeWalker的博客</strong>
+      <strong>覆舟之水</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -189,7 +189,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Docker"></span>
+            <span id="subtitle">Docker</span>
           
         </div>
 
@@ -223,7 +223,7 @@
         
         
         
-          190 mins
+          188 mins
         
       </span>
     
@@ -284,7 +284,7 @@
 <h5 id="3-1-1-1-Docker安装"><a href="#3-1-1-1-Docker安装" class="headerlink" title="3.1.1.1 Docker安装"></a>3.1.1.1 Docker安装</h5><p><strong>第一种 安装<code>docker</code></strong></p>
 <ul>
 <li><p>安装docker</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install docker<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt install docker</code></pre></div>
 </li>
 <li><p>安装nvidia-docker<br>  nvidia-docker是一个可以使用GPU的docker，它在docker上做了一层封装，通过nvidia-docker-plugin，然后调用到docker上，其最终实现的还是在docker的启动命令上携带一些必要的参数。因此在安装nvidia-docker之前，还是需要安装docker的。</p>
   <div style="text-align: center">
@@ -292,7 +292,7 @@
   </div>
 
 <p>  docker一般都是使用基于CPU的应用，而如果是GPU的话，就需要安装特有的硬件环境，比如需要安装nvidia driver，所以docker容器并不直接支持Nvidia GPU。为了使docker image能很便利的使用Nvidia GPU，从而产生了nvidia-docker，由它来制作nvidia driver的image，这就要求在目标机器上启动container时，确保字符设备以及驱动文件已经被挂载。</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install -y nvidia-docker2<br></code></pre></td></tr></table></figure></li>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt install -y nvidia-docker2</code></pre></div></li>
 </ul>
 <p><strong>第二种 安装<code>docker.io</code>(推荐)</strong></p>
 <p>Docker19版本更新了GPU驱动使用参数，下面介绍具体的安装方法。</p>
@@ -300,88 +300,117 @@
 <li><p><code>docker-ce</code>与<code>docker-io</code>的区别<br>  <code>docker-ce</code>是由docker团队认证并维护的一个社区版发行包，<code>docker.io</code>是ubuntu团队维护的一个包。由于之前ubuntu团队有很长一段时间没有维护docker的版本，导致有一段时间docker.io的版本还停留在远古版本。后来ubuntu版本重新开始维护，版本继续送代，截止2021-05-14日，版本已经更新到<code>Docker version 20.10.2</code>。两者使用相同的包管理，<code>docker-ce</code>是所有依赖包由docker团队管理，可以保证docker运行的稳定，适合作为纯docker管理的生产环境，即整个系统只有一个docker在跑，剩下所有应用都通过发布docker的容器来部署。<code>docker-io</code>的依赖包则是由ubuntu统一管理，更符合包管理的理念，也更规范，可以尽可能的保证系统和多个软件的运行稳定，适合作为多软件协同运行的服务器和个人桌面使用。Docker目前是一个被广泛使用的工具，ubuntu再次停止维护的概率不大。所以除了纯docker环境，个人建议直接用<code>docker.io</code>。</p>
 </li>
 <li><p>安装<code>docker.io</code></p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Install Docker</span><br>sudo apt install docker.io<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># Install Docker</span>
+sudo apt install docker.io</code></pre></div>
 </li>
 <li><p>在线安装nvidia-container-toolkit</p>
 <ul>
 <li><p>首先配置package repositories</p>
-   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Get system version</span><br>distribution=$(. /etc/os-release;<span class="hljs-built_in">echo</span> $ID<span class="hljs-variable">$VERSION_ID</span>)<br><span class="hljs-comment"># add public key</span><br>curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -<br><span class="hljs-comment"># add source</span><br>curl -s -L https://nvidia.github.io/nvidia-docker/<span class="hljs-variable">$distribution</span>/nvidia-docker.list | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/nvidia-docker.list<br>sudo apt-get update<br></code></pre></td></tr></table></figure>
+   <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># Get system version</span>
+distribution=$(. /etc/os-release;<span class="hljs-built_in">echo</span> $ID<span class="hljs-variable">$VERSION_ID</span>)
+<span class="hljs-comment"># add public key</span>
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+<span class="hljs-comment"># add source</span>
+curl -s -L https://nvidia.github.io/nvidia-docker/<span class="hljs-variable">$distribution</span>/nvidia-docker.list | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update</code></pre></div>
 </li>
 <li><p>安装nvidia-container-toolkit</p>
-   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bsah">sudo apt-get install -y nvidia-container-toolkit<br></code></pre></td></tr></table></figure></li>
+   <div class="code-wrapper"><pre><code class="hljs bsah">sudo apt-get install -y nvidia-container-toolkit</code></pre></div></li>
 </ul>
 </li>
 <li><p>离线安装nvidia-container-toolkit</p>
 <ul>
 <li><p>在有网络连接的设备上配置package repositories</p>
-   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Get system version</span><br>distribution=$(. /etc/os-release;<span class="hljs-built_in">echo</span> $ID<span class="hljs-variable">$VERSION_ID</span>)<br><span class="hljs-comment"># add public key</span><br>curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -<br><span class="hljs-comment"># add source</span><br>curl -s -L https://nvidia.github.io/nvidia-docker/<span class="hljs-variable">$distribution</span>/nvidia-docker.list | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/nvidia-docker.list<br>sudo apt-get update<br></code></pre></td></tr></table></figure>
+   <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># Get system version</span>
+distribution=$(. /etc/os-release;<span class="hljs-built_in">echo</span> $ID<span class="hljs-variable">$VERSION_ID</span>)
+<span class="hljs-comment"># add public key</span>
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+<span class="hljs-comment"># add source</span>
+curl -s -L https://nvidia.github.io/nvidia-docker/<span class="hljs-variable">$distribution</span>/nvidia-docker.list | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update</code></pre></div>
 </li>
 <li><p>下载nvidia-container-toolkit套件</p>
-   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bsah">apt download libnvidia-container1<br>apt download libnvidia-container-tools<br>apt download nvidia-container-toolkit<br>apt download nvidia-container-runtime<br>apt download nvidia-docker2<br></code></pre></td></tr></table></figure>
+   <div class="code-wrapper"><pre><code class="hljs bsah">apt download libnvidia-container1
+apt download libnvidia-container-tools
+apt download nvidia-container-toolkit
+apt download nvidia-container-runtime
+apt download nvidia-docker2</code></pre></div>
 </li>
 <li><p>安装nvidia-container-toolkit套件(以下顺序不能改变)</p>
-   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bsah">dpkg -i libnvidia-container1_***.deb<br>dpkg -i libnvidia-container-tools_***.deb<br>dpkg -i nvidia-container-toolkit_***.deb<br>dpkg -i nvidia-container-runtime_***.deb<br>dpkg -i nvidia-docker2_***.deb<br></code></pre></td></tr></table></figure></li>
+   <div class="code-wrapper"><pre><code class="hljs bsah">dpkg -i libnvidia-container1_***.deb
+dpkg -i libnvidia-container-tools_***.deb
+dpkg -i nvidia-container-toolkit_***.deb
+dpkg -i nvidia-container-runtime_***.deb
+dpkg -i nvidia-docker2_***.deb</code></pre></div></li>
 </ul>
 </li>
 <li><p>安装完成后重启Docker</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl restart docker<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo systemctl restart docker</code></pre></div>
 </li>
 <li><p>使用该版本Docker创建容器时使用<code>--gpus</code>参数指定使用的GPU编号：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo docker run -it --gpus all imagename<br></code></pre></td></tr></table></figure></li>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo docker run -it --gpus all imagename</code></pre></div></li>
 </ul>
 <h5 id="3-1-1-2-加入Docker用户组"><a href="#3-1-1-2-加入Docker用户组" class="headerlink" title="3.1.1.2 加入Docker用户组"></a>3.1.1.2 加入Docker用户组</h5><ul>
 <li><p>创建docker用户组</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo groupadd docker<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo groupadd docker</code></pre></div>
 </li>
 <li><p>将用户加入docker用户组</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo usermod -aG docker <span class="hljs-variable">$&#123;USER&#125;</span><br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo usermod -aG docker <span class="hljs-variable">$&#123;USER&#125;</span></code></pre></div>
 </li>
 <li><p>重启docker服务</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl restart docker<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo systemctl restart docker</code></pre></div>
 </li>
 <li><p>切换或者退出当前账户，再重新登入</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">su root<br>su <span class="hljs-variable">$&#123;USER&#125;</span><br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash">su root
+su <span class="hljs-variable">$&#123;USER&#125;</span></code></pre></div>
 </li>
 <li><p>添加访问和执行权限(普通用户可不加<code>sudo</code>使用docker)</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">chmod</span> a+rw /var/run/docker.sock<br></code></pre></td></tr></table></figure></li>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo <span class="hljs-built_in">chmod</span> a+rw /var/run/docker.sock</code></pre></div></li>
 </ul>
 <h5 id="3-1-1-3-查看Docker安装信息"><a href="#3-1-1-3-查看Docker安装信息" class="headerlink" title="3.1.1.3 查看Docker安装信息"></a>3.1.1.3 查看Docker安装信息</h5><p>使用<code>docker info</code>查看 Docker 系统信息，包括镜像和容器数。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker info <br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker info</code></pre></div>
 
 <p><strong>示例：</strong><br>查看Docker版本信息。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker info<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker info</code></pre></div>
 
 
 <h5 id="3-1-1-4-查看Docker版本"><a href="#3-1-1-4-查看Docker版本" class="headerlink" title="3.1.1.4 查看Docker版本"></a>3.1.1.4 查看Docker版本</h5><p>使用<code>docker version</code>查看Docker的版本信息。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker version [Options]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker version [Options]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
 <li>-f：指定返回值的模板文件</li>
 </ul>
 <p><strong>示例：</strong><br>查看Docker版本信息。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker version<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker version</code></pre></div>
 
 <h5 id="3-1-1-5-卸载Docker"><a href="#3-1-1-5-卸载Docker" class="headerlink" title="3.1.1.5 卸载Docker"></a>3.1.1.5 卸载Docker</h5><ul>
 <li>确定您拥有什么已安装的软件包</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dpkg -l | grep -i docker<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">dpkg -l | grep -i docker</code></pre></div>
 
 <ul>
 <li>删除软件包服务</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get purge -y docker.io docker-engine docker<br>sudo apt-get autoremove -y --purge docker.io docker-engine docker<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">sudo apt-get purge -y docker.io docker-engine docker
+sudo apt-get autoremove -y --purge docker.io docker-engine docker</code></pre></div>
 
 <ul>
-<li>删除主机上的映像，容器，卷或用户创建的配置文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">rm</span> -rf /var/lib/docker /etc/docker<br>sudo <span class="hljs-built_in">rm</span> /etc/apparmor.d/docker<br>sudo groupdel docker<br>sudo <span class="hljs-built_in">rm</span> -rf /var/run/docker.sock<br></code></pre></td></tr></table></figure></li>
+<li>删除主机上的映像，容器，卷或用户创建的配置文件</li>
 </ul>
+<div class="code-wrapper"><pre><code class="hljs bash">sudo <span class="hljs-built_in">rm</span> -rf /var/lib/docker /etc/docker
+sudo <span class="hljs-built_in">rm</span> /etc/apparmor.d/docker
+sudo groupdel docker
+sudo <span class="hljs-built_in">rm</span> -rf /var/run/docker.sock</code></pre></div>
+
+
 <h4 id="3-1-2-Windows安装"><a href="#3-1-2-Windows安装" class="headerlink" title="3.1.2 Windows安装"></a>3.1.2 Windows安装</h4><h5 id="3-1-2-1-启动依赖环境"><a href="#3-1-2-1-启动依赖环境" class="headerlink" title="3.1.2.1 启动依赖环境"></a>3.1.2.1 启动依赖环境</h5><ul>
 <li><p><strong>Hyper-V</strong></p>
 <ul>
 <li><p>以管理员身份运行Powershell：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All</code></pre></div>
 </li>
 <li><p>在BIOS中开启Virtualization<br>  不同的主板设置不同，基本位于Advanced-&gt;CPU设置中。</p>
 </li>
@@ -391,7 +420,7 @@
 <ul>
 <li>必须运行Windows10版本2004及更高版本(内部版本19041及更高版本)或Windows 11。</li>
 <li>Windows11中默认安装了WSL内核，如果没有可手动安装。</li>
-<li>以管理员身份运行Powershell：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wsl --install<br></code></pre></td></tr></table></figure>
+<li>以管理员身份运行Powershell：  <div class="code-wrapper"><pre><code class="hljs bash">wsl --install</code></pre></div>
   此命令将启用所需的可选组件，下载最新的Linux内核，将WSL2设置为默认值，并安装 Linux发行版(默认安装Ubuntu)。</li>
 </ul>
 </li>
@@ -405,14 +434,14 @@
 <h5 id="3-1-2-3-下载Linux内核更新包"><a href="#3-1-2-3-下载Linux内核更新包" class="headerlink" title="3.1.2.3 下载Linux内核更新包"></a>3.1.2.3 下载Linux内核更新包</h5><p>启动Docker Desktop时可能会要求更新WSL内核版本，在<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">WSL文档中</a>获取<a target="_blank" rel="noopener" href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">适用于x64计算机的WSL2 Linux内核更新包</a>。完成安装后重启Docker即可。</p>
 <h5 id="3-1-2-4-注意事项"><a href="#3-1-2-4-注意事项" class="headerlink" title="3.1.2.4 注意事项"></a>3.1.2.4 注意事项</h5><ul>
 <li>docker运行出现错误<code>error during connect: This error may indicate that the docker daemon is not running.:</code><ul>
-<li>powershell进入目录”C:\Program Files\Docker\Docker”  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;C:\Program Files\Docker\Docker&quot;</span><br></code></pre></td></tr></table></figure></li>
-<li>执行以下命令  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./DockerCli.exe -SwitchDaemon<br></code></pre></td></tr></table></figure></li>
+<li>powershell进入目录”C:\Program Files\Docker\Docker”  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;C:\Program Files\Docker\Docker&quot;</span></code></pre></div></li>
+<li>执行以下命令  <div class="code-wrapper"><pre><code class="hljs bash">./DockerCli.exe -SwitchDaemon</code></pre></div></li>
 </ul>
 </li>
 </ul>
 <h3 id="3-2-镜像命令"><a href="#3-2-镜像命令" class="headerlink" title="3.2 镜像命令"></a>3.2 镜像命令</h3><h4 id="3-2-1-登入-x2F-登出-login-x2F-logout"><a href="#3-2-1-登入-x2F-登出-login-x2F-logout" class="headerlink" title="3.2.1 登入&#x2F;登出(login&#x2F;logout)"></a>3.2.1 登入&#x2F;登出(login&#x2F;logout)</h4><p>使用<code>docker login</code>登陆到一个Docker镜像仓库，如果未指定镜像仓库地址，默认为官方仓库 Docker Hub；<br>使用<code>docker logout</code>登出一个Docker镜像仓库，如果未指定镜像仓库地址，默认为官方仓库 Docker Hub。<br><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker login [Options] [Server]<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">logout</span> [Options] [Server]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker login [Options] [Server]</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">logout</span> [Options] [Server]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -420,13 +449,13 @@
 <li>-p：登陆的密码</li>
 </ul>
 <p><strong>示例：</strong><br>登陆到Docker Hub。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker login -u username -p password<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker login -u username -p password</code></pre></div>
 <p>登出Docker Hub。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">logout</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">logout</span></code></pre></div>
 
 
 <h4 id="3-2-2-查找镜像-search"><a href="#3-2-2-查找镜像-search" class="headerlink" title="3.2.2 查找镜像(search)"></a>3.2.2 查找镜像(search)</h4><p>使用<code>docker search</code>从Docker Hub查找镜像。<br><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker search [Options] TERM<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker search [Options] TERM</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -443,11 +472,11 @@
 <li><strong>AUTOMATED</strong> 是否是自动构建的镜像</li>
 </ul>
 <p><strong>示例：</strong><br>从Docker Hub查找所有镜像名包含java，并且收藏数大于10的镜像。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker search -s 10 java<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker search -s 10 java</code></pre></div>
 
 
 <h4 id="3-2-3-拉取镜像-pull"><a href="#3-2-3-拉取镜像-pull" class="headerlink" title="3.2.3 拉取镜像(pull)"></a>3.2.3 拉取镜像(pull)</h4><p>使用<code>docker pull</code>从镜像仓库中拉取或者更新指定镜像。<br><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull [Options] NAME[:TAG|@DIGEST]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker pull [Options] NAME[:TAG|@DIGEST]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -455,25 +484,25 @@
 <li>–disable-content-trust：忽略镜像的校验，默认开启</li>
 </ul>
 <p><strong>示例：</strong><br>从Docker Hub下载<code>java</code>最新版镜像。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull java<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker pull java</code></pre></div>
 
 <p>从Docker Hub下载<code>Repository</code>为<code>java</code>的所有镜像。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull -a java<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker pull -a java</code></pre></div>
 
 
 <h4 id="3-2-4-上传镜像-push"><a href="#3-2-4-上传镜像-push" class="headerlink" title="3.2.4 上传镜像(push)"></a>3.2.4 上传镜像(push)</h4><p>使用<code>docker push</code>将本地的镜像上传到镜像仓库，要先登陆到镜像仓库<br><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker push [Options] NAME[:TAG]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker push [Options] NAME[:TAG]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
 <li>–disable-content-trust：忽略镜像的校验，默认开启</li>
 </ul>
 <p><strong>示例：</strong><br>上传本地镜像<code>myapache:v1</code>到镜像仓库中。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker push myapache:v1<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker push myapache:v1</code></pre></div>
 
 <h4 id="3-2-5-查看镜像-images"><a href="#3-2-5-查看镜像-images" class="headerlink" title="3.2.5 查看镜像(images)"></a>3.2.5 查看镜像(images)</h4><p>使用<code>docker images</code>查看本地存在的镜像。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker images [Options] [Repository[:Tag]]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker images [Options] [Repository[:Tag]]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -485,19 +514,19 @@
 <li>-q：只显示镜像ID</li>
 </ul>
 <p><strong>示例：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker images<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker images</code></pre></div>
 
 <p>列出的镜像列表包含以下信息：</p>
 <ul>
 <li><strong>REPOSITORY</strong> 镜像来自于哪个仓库，比如ubuntu</li>
-<li>**TAG ** 镜像的标记，比如 14.04</li>
+<li><strong>TAG</strong> 镜像的标记，比如 14.04</li>
 <li><strong>IMAGE ID</strong> 镜像的ID号(唯一)</li>
 <li><strong>CREATED</strong> 镜像创建时间</li>
 <li><strong>VIRTUAL SIZE</strong> 镜像大小</li>
 </ul>
 <h4 id="3-2-6-载入镜像-load"><a href="#3-2-6-载入镜像-load" class="headerlink" title="3.2.6 载入镜像(load)"></a>3.2.6 载入镜像(load)</h4><p>使用 <code>docker load</code>对于本地其他方式获得的镜像进行导入。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mathematica"><span class="hljs-variable">docker</span> <span class="hljs-variable">load</span> <span class="hljs-punctuation">[</span><span class="hljs-built_in">Options</span><span class="hljs-punctuation">]</span> <span class="hljs-built_in">Image</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-variable">docker</span> <span class="hljs-variable">load</span> <span class="hljs-punctuation">[</span><span class="hljs-built_in">Options</span><span class="hljs-punctuation">]</span> <span class="hljs-built_in">Image</span></code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -505,22 +534,22 @@
 <li>–quiet ， -q：精简输出信息。</li>
 </ul>
 <p><strong>示例：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker load --input fedora.tar<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker load --input fedora.tar</code></pre></div>
 
 <h4 id="3-2-7-存出镜像-save"><a href="#3-2-7-存出镜像-save" class="headerlink" title="3.2.7 存出镜像(save)"></a>3.2.7 存出镜像(save)</h4><p>可以使用<code>docker save</code>将指定镜像保存成tar归档文件。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker save [Options] Image<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker save [Options] Image</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
 <li>-o：输出到的文件。</li>
 </ul>
 <p><strong>示例：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker save -o ubuntu_16.04.tar ubuntu:16.04<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker save -o ubuntu_16.04.tar ubuntu:16.04</code></pre></div>
 
 <h4 id="3-2-8-删除镜像-rmi"><a href="#3-2-8-删除镜像-rmi" class="headerlink" title="3.2.8 删除镜像(rmi)"></a>3.2.8 删除镜像(rmi)</h4><p>使用<code>docker rmi</code>删除镜像。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker rmi [Options] Image<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker rmi [Options] Image</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -528,7 +557,7 @@
 <li>–no-prune：不移除该镜像的过程镜像，默认移除</li>
 </ul>
 <p><strong>示例：</strong><br>强制删除本地镜像。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker rmi -f ubuntu_16.04.tar<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker rmi -f ubuntu_16.04.tar</code></pre></div>
 
 <p><strong>注意：</strong></p>
 <blockquote>
@@ -539,10 +568,15 @@
 </blockquote>
 <h4 id="3-2-9-创建Dockerfile"><a href="#3-2-9-创建Dockerfile" class="headerlink" title="3.2.9 创建Dockerfile"></a>3.2.9 创建Dockerfile</h4><p>我们可以使用<code>docker build</code>来创建一个新的镜像。首先需要创建一个Dockerfile，包含一些如何创建镜像的指令。</p>
 <p>新建一个目录和一个Dockerfile</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">touch</span> Dockerfile<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">touch</span> Dockerfile</code></pre></div>
 
 <p>在Dockerfile中写入创建信息，Dockerfile 中每一条指令都创建镜像的一层，例如：</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># This is a comment</span><br><span class="hljs-keyword">FROM</span> ubuntu:<span class="hljs-number">14.04</span><br><span class="hljs-keyword">MAINTAINER</span> Docker Newbee &lt;newbee@docker.com&gt;<br><span class="hljs-keyword">RUN</span><span class="language-bash"> apt-get -qq update</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> apt-get -qqy install ruby ruby-dev</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> gem install sinatra</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs dockerfile"><span class="hljs-comment"># This is a comment</span>
+<span class="hljs-keyword">FROM</span> ubuntu:<span class="hljs-number">14.04</span>
+<span class="hljs-keyword">MAINTAINER</span> Docker Newbee &lt;newbee@docker.com&gt;
+<span class="hljs-keyword">RUN</span><span class="language-bash"> apt-get -qq update</span>
+<span class="hljs-keyword">RUN</span><span class="language-bash"> apt-get -qqy install ruby ruby-dev</span>
+<span class="hljs-keyword">RUN</span><span class="language-bash"> gem install sinatra</span></code></pre></div>
 <p><strong>Dockerfile 基本的语法是：</strong></p>
 <ul>
 <li><code>#</code> 注释</li>
@@ -552,12 +586,12 @@
 </ul>
 <h4 id="3-2-10-从Dockerfile创建镜像-build"><a href="#3-2-10-从Dockerfile创建镜像-build" class="headerlink" title="3.2.10 从Dockerfile创建镜像(build)"></a>3.2.10 从Dockerfile创建镜像(build)</h4><p>对于已有的Dockerfile，可以使用<code>docker build</code>来生成镜像。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker build [Options] Path | Url | -<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker build [Options] Path | Url | -</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
 <li>-f：指定要使用的Dockerfile路径</li>
-<li>-t &#x2F; -tag：镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签</li>
+<li>-t&#x2F;-tag：镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签</li>
 <li>–build-arg&#x3D;[]：设置镜像创建时的变量</li>
 <li>–cpu-shares：设置 cpu 使用权重</li>
 <li>–cpu-period：限制 CPU CFS周期</li>
@@ -580,11 +614,11 @@
 <li>–network: 默认 default。在构建期间设置RUN指令的网络模式</li>
 </ul>
 <p><strong>示例：</strong><br>使用当前目录(用<code>.</code>表示)的 Dockerfile 创建镜像，标签为 walker&#x2F;ubuntu:v1。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker build -t walker/ubuntu:v1 . <br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker build -t walker/ubuntu:v1 .</code></pre></div>
 <p>使用URL github.com&#x2F;creack&#x2F;docker-firefox 的 Dockerfile 创建镜像。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker build github.com/creack/docker-firefox<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker build github.com/creack/docker-firefox</code></pre></div>
 <p>也可以通过<code>-f</code>指定Dockerfile文件的位置。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker build -f /path/to/a/Dockerfile .<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker build -f /path/to/a/Dockerfile .</code></pre></div>
 
 <p><strong>注意：</strong>  </p>
 <blockquote>
@@ -592,15 +626,15 @@
 </blockquote>
 <h4 id="3-2-11-标记镜像-tag"><a href="#3-2-11-标记镜像-tag" class="headerlink" title="3.2.11 标记镜像(tag)"></a>3.2.11 标记镜像(tag)</h4><p>使用<code>docker tag</code>标记本地镜像，将其归入某一仓库。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker tag [Options] Image[:Tag] [RegistryHost/][Username/]Name[:Tag]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker tag [Options] Image[:Tag] [RegistryHost/][Username/]Name[:Tag]</code></pre></div>
 
 <p><strong>示例：</strong><br>将镜像ubuntu:15.10标记为 walker&#x2F;ubuntu:v3 镜像。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker tag ubuntu:15.10 walker/ubuntu:v3<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker tag ubuntu:15.10 walker/ubuntu:v3</code></pre></div>
 
 
 <h4 id="3-2-12-镜像历史-history"><a href="#3-2-12-镜像历史-history" class="headerlink" title="3.2.12 镜像历史(history)"></a>3.2.12 镜像历史(history)</h4><p>使用<code>docker history</code>查看指定镜像的创建历史。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">history</span> [Options] Image<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">history</span> [Options] Image</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -609,11 +643,11 @@
 <li>-q：仅列出提交记录ID</li>
 </ul>
 <p><strong>示例：</strong><br>查看本地镜像walker&#x2F;ubuntu:v3的创建历史。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">history</span> walker/ubuntu:v3<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">history</span> walker/ubuntu:v3</code></pre></div>
 
 <h4 id="3-2-13-导入镜像-import"><a href="#3-2-13-导入镜像-import" class="headerlink" title="3.2.13 导入镜像(import)"></a>3.2.13 导入镜像(import)</h4><p>使用<code>docker import</code>从归档文件中创建镜像。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker import [Options] file|URL|- [REPOSITORY[:TAG]]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker import [Options] file|URL|- [REPOSITORY[:TAG]]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -621,7 +655,7 @@
 <li>-m：提交时的说明文字</li>
 </ul>
 <p><strong>示例：</strong><br>从镜像归档文件my_ubuntu_v3.tar创建镜像，命名为walker&#x2F;ubuntu:v4。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker import my_ubuntu_v3.tar walker/ubuntu:v4<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker import my_ubuntu_v3.tar walker/ubuntu:v4</code></pre></div>
 
 <p><strong>注意：</strong> </p>
 <blockquote>
@@ -633,7 +667,7 @@
 </blockquote>
 <h3 id="3-3-容器操作"><a href="#3-3-容器操作" class="headerlink" title="3.3 容器操作"></a>3.3 容器操作</h3><h4 id="3-3-1-列出容器-ps"><a href="#3-3-1-列出容器-ps" class="headerlink" title="3.3.1 列出容器(ps)"></a>3.3.1 列出容器(ps)</h4><p>使用<code>docker ps</code>列出容器。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker ps [Options]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker ps [Options]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -647,36 +681,36 @@
 <li>-s：显示总的文件大小</li>
 </ul>
 <p><strong>示例：</strong><br>列出所有在运行的容器信息。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker ps<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker ps</code></pre></div>
 
 
 <h4 id="3-3-2-连接进入容器-attach"><a href="#3-3-2-连接进入容器-attach" class="headerlink" title="3.3.2 连接进入容器(attach)"></a>3.3.2 连接进入容器(attach)</h4><p>使用<code>docker attach</code>连接到正在运行中的容器。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker attach [Options] CONTAINER<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker attach [Options] CONTAINER</code></pre></div>
 
 <p><strong>注意：</strong> </p>
 <blockquote>
 <p>要attach上去的容器必须正在运行，可以同时连接上同一个container来共享屏幕(与screen命令的attach类似)。官方文档中说attach后可以通过Ctrl+C来detach，但实际上经过我的测试，如果container当前在运行bash，Ctrl+C自然是当前行的输入，没有退出；如果container当前正在前台运行进程，如输出nginx的access.log日志，Ctrl+C不仅会导致退出容器，而且还stop了。这不是我们想要的，detach的意思按理应该是脱离容器终端，但容器依然运行。好在attach是可以带上–sig-proxy&#x3D;false来确保Ctrl+D或Ctrl+C不会关闭容器。</p>
 </blockquote>
 <p><strong>示例：</strong><br>容器<code>mynginx</code>将访问日志指到标准输出，连接到容器查看访问信息。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker attach --sig-proxy=<span class="hljs-literal">false</span> mynginx<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker attach --sig-proxy=<span class="hljs-literal">false</span> mynginx</code></pre></div>
 
 
 <h4 id="3-3-3-导出容器-export"><a href="#3-3-3-导出容器-export" class="headerlink" title="3.3.3 导出容器(export)"></a>3.3.3 导出容器(export)</h4><p>使用<code>docker export</code>将文件系统作为一个tar归档文件导出。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">export</span> [Options] CONTAINER<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">export</span> [Options] CONTAINER</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
 <li>-o：将输入内容写到文件。</li>
 </ul>
 <p><strong>示例：</strong><br>将<code>id</code>为<code>a404c6c174a2</code>的容器按日期保存为tar文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">export</span> -o mysql-`<span class="hljs-built_in">date</span> +%Y%m%d`.tar a404c6c174a2<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">export</span> -o mysql-`<span class="hljs-built_in">date</span> +%Y%m%d`.tar a404c6c174a2</code></pre></div>
 
 
 <h4 id="3-3-4-获取元数据-inspect"><a href="#3-3-4-获取元数据-inspect" class="headerlink" title="3.3.4 获取元数据(inspect)"></a>3.3.4 获取元数据(inspect)</h4><p>使用<code>docker inspect</code>获取容器&#x2F;镜像的元数据。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker inspect [Options] NAME|ID [NAME|ID...]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker inspect [Options] NAME|ID [NAME|ID...]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -685,24 +719,24 @@
 <li>–type：为指定类型返回JSON</li>
 </ul>
 <p><strong>示例：</strong><br>获取镜像mysql:5.6的元信息。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker inspect mysql:5.6<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker inspect mysql:5.6</code></pre></div>
 
 
 <h4 id="3-3-5-容器进程-top"><a href="#3-3-5-容器进程-top" class="headerlink" title="3.3.5 容器进程(top)"></a>3.3.5 容器进程(top)</h4><p>使用<code>docker top</code>查看容器中运行的进程信息，支持<code>ps</code>命令参数。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker top [Options] Container [ps Options]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker top [Options] Container [ps Options]</code></pre></div>
 
 <p><strong>注意：</strong></p>
 <blockquote>
 <p>容器运行时不一定有<code>/bin/bash</code>终端来交互执行<code>top</code>命令，而且容器还不一定有<code>top</code>命令，可以使用<code>docker top</code>来实现查看container中正在运行的进程。</p>
 </blockquote>
 <p><strong>示例：</strong><br>查看容器<code>mymysql</code>的进程信息。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker top mymysql<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker top mymysql</code></pre></div>
 
 
 <h4 id="3-3-6-容器事件-events"><a href="#3-3-6-容器事件-events" class="headerlink" title="3.3.6 容器事件(events)"></a>3.3.6 容器事件(events)</h4><p>使用<code>docker events</code>从服务器获取实时事件。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker events [Options]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker events [Options]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -711,7 +745,7 @@
 <li>–until ：流水时间显示到指定的时间为止；</li>
 </ul>
 <p><strong>示例：</strong><br>显示docker 镜像为mysql:5.6 2016年7月1日后的相关事件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker events -f <span class="hljs-string">&quot;image&quot;</span>=<span class="hljs-string">&quot;mysql:5.6&quot;</span> --since=<span class="hljs-string">&quot;1467302400&quot;</span> <br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker events -f <span class="hljs-string">&quot;image&quot;</span>=<span class="hljs-string">&quot;mysql:5.6&quot;</span> --since=<span class="hljs-string">&quot;1467302400&quot;</span></code></pre></div>
 
 <p><strong>注意：</strong></p>
 <blockquote>
@@ -719,7 +753,7 @@
 </blockquote>
 <h4 id="3-3-7-容器日志-logs"><a href="#3-3-7-容器日志-logs" class="headerlink" title="3.3.7 容器日志(logs)"></a>3.3.7 容器日志(logs)</h4><p>使用<code>docker logs</code>获取容器的日志。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker logs [Options] Container<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker logs [Options] Container</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -729,32 +763,32 @@
 <li>–tail：仅列出最新N条容器日志</li>
 </ul>
 <p><strong>示例：</strong><br>跟踪查看容器mynginx的日志输出。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker logs -f mynginx<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker logs -f mynginx</code></pre></div>
 
 <p>查看容器mynginx从2016年7月1日后的最新10条日志。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker logs --since=<span class="hljs-string">&quot;2016-07-01&quot;</span> --<span class="hljs-built_in">tail</span>=10 mynginx<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker logs --since=<span class="hljs-string">&quot;2016-07-01&quot;</span> --<span class="hljs-built_in">tail</span>=10 mynginx</code></pre></div>
 
 
 <h4 id="3-3-8-阻塞容器-wait"><a href="#3-3-8-阻塞容器-wait" class="headerlink" title="3.3.8 阻塞容器(wait)"></a>3.3.8 阻塞容器(wait)</h4><p>使用<code>docker wait</code>阻塞运行直到容器停止，然后打印出它的退出代码。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">wait</span> [Options] Container [Container...]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">wait</span> [Options] Container [Container...]</code></pre></div>
 
 <p><strong>示例：</strong><br>跟踪查看容器mynginx的日志输出。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">wait</span> mynginx<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">wait</span> mynginx</code></pre></div>
 
 
 
 <h4 id="3-3-9-容器端口-port"><a href="#3-3-9-容器端口-port" class="headerlink" title="3.3.9 容器端口(port)"></a>3.3.9 容器端口(port)</h4><p>使用<code>docker port</code>列出指定的容器的端口映射，或者查找将<code>PRIVATE_PORT NAT</code>到面向公众的端口。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker port [Options] Container [Private_Port[/Proto]]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker port [Options] Container [Private_Port[/Proto]]</code></pre></div>
 
 <p><strong>示例：</strong><br>查看容器mynginx的端口映射情况。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker port mymysql<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker port mymysql</code></pre></div>
 
 
 <h4 id="3-3-10-容器提交-commit"><a href="#3-3-10-容器提交-commit" class="headerlink" title="3.3.10 容器提交(commit)"></a>3.3.10 容器提交(commit)</h4><p>使用<code>docker commit</code>从容器创建一个新的镜像。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker commit [Options] Container [Repository[:Tag]]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker commit [Options] Container [Repository[:Tag]]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -764,48 +798,48 @@
 <li>-p：在commit时，将容器暂停。</li>
 </ul>
 <p><strong>yuhong示例：</strong><br>将容器<code>a404c6c174a2</code>保存为新的镜像，并添加提交人信息和说明信息。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker commit -a <span class="hljs-string">&quot;walker.com&quot;</span> -m <span class="hljs-string">&quot;my apache&quot;</span> a404c6c174a2  mymysql:v1 <br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker commit -a <span class="hljs-string">&quot;walker.com&quot;</span> -m <span class="hljs-string">&quot;my apache&quot;</span> a404c6c174a2  mymysql:v1</code></pre></div>
 
 
 <h4 id="3-3-11-容器数据拷贝-cp"><a href="#3-3-11-容器数据拷贝-cp" class="headerlink" title="3.3.11 容器数据拷贝(cp)"></a>3.3.11 容器数据拷贝(cp)</h4><p>使用<code>docker cp</code>进行容器与主机之间的数据拷贝。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span> [Options] Container:Src_Path Dest_Path|-<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span> [Options] Src_Path|- Container:Dedt_Path<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span> [Options] Container:Src_Path Dest_Path|-</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span> [Options] Src_Path|- Container:Dedt_Path</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
 <li>-L：保持源目标中的链接</li>
 </ul>
 <p><strong>示例：</strong><br>将主机<code>/www/walker</code>目录拷贝到容器<code>96f7f14e99ab</code>的<code>/www</code>目录下。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span> /www/walker 96f7f14e99ab:/www/<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span> /www/walker 96f7f14e99ab:/www/</code></pre></div>
 
 <p>将主机<code>/www/walker</code>目录拷贝到容器<code>96f7f14e99ab</code>中，目录重命名为<code>www</code>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span> /www/walker 96f7f14e99ab:/www<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span> /www/walker 96f7f14e99ab:/www</code></pre></div>
 
 <p>将容器<code>96f7f14e99ab</code>的<code>/www</code>目录拷贝到主机的<code>/tmp</code>目录中。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span>  96f7f14e99ab:/www /tmp/<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span>  96f7f14e99ab:/www /tmp/</code></pre></div>
 
 
 
 <h4 id="3-3-12-容器文件结构-diff"><a href="#3-3-12-容器文件结构-diff" class="headerlink" title="3.3.12 容器文件结构(diff)"></a>3.3.12 容器文件结构(diff)</h4><p>使用<code>docker diff</code>检查容器里文件结构的更改。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker diff [Options] Container<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker diff [Options] Container</code></pre></div>
 
 <p><strong>示例：</strong><br>查看容器mymysql的文件结构更改。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker diff mymysql<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker diff mymysql</code></pre></div>
 
 
 
 <h3 id="3-4-容器生命周期管理"><a href="#3-4-容器生命周期管理" class="headerlink" title="3.4 容器生命周期管理"></a>3.4 容器生命周期管理</h3><h4 id="3-4-1-创建容器-create"><a href="#3-4-1-创建容器-create" class="headerlink" title="3.4.1 创建容器(create)"></a>3.4.1 创建容器(create)</h4><p>使用<code>docker create</code>创建一个新的容器但不启动它。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker create [Options] Inage [Command] [Arg...]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker create [Options] Inage [Command] [Arg...]</code></pre></div>
 
 <p><strong>示例：</strong><br>使用docker镜像nginx:latest创建一个容器，并将容器命名为mywalker</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker create --name mywalker nginx:latest<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker create --name mywalker nginx:latest</code></pre></div>
 
 <h4 id="3-4-2-运行容器-run"><a href="#3-4-2-运行容器-run" class="headerlink" title="3.4.2 运行容器(run)"></a>3.4.2 运行容器(run)</h4><p>使用<code>docker run</code>创建一个新的容器并运行一个命令。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run [Options] Image [Command] [Arg...]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker run [Options] Image [Command] [Arg...]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <table>
@@ -1070,47 +1104,47 @@
 </tbody></table>
 <p><strong>示例：</strong></p>
 <p><strong>使用镜像nginx:latest以交互模式启动一个容器，命名为mynginx，使用GPU启动，同时将宿主机<code>/data1/walker</code>挂载到docker的<code>/share</code>文件夹下，将宿主机2333端口映射到容器的22端口，为容器分配2G共享内存(Shared Memory)</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -it --runtime=nvidia --name=mynginx -v /data1/walker:/share -p 2323:22 --shm-size=<span class="hljs-string">&quot;2g&quot;</span> nginx:latest<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker run -it --runtime=nvidia --name=mynginx -v /data1/walker:/share -p 2323:22 --shm-size=<span class="hljs-string">&quot;2g&quot;</span> nginx:latest</code></pre></div>
 
 <p>使用docker镜像nginx:latest以后台模式启动一个容器，并将容器命名为mynginx。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run --name mynginx -d nginx:latest<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker run --name mynginx -d nginx:latest</code></pre></div>
 
 <p>使用镜像nginx:latest以后台模式启动一个容器，并将容器的80端口映射到主机随机端口。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -P -d nginx:latest<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker run -P -d nginx:latest</code></pre></div>
 
 <p>使用镜像 nginx:latest，以后台模式启动一个容器，将容器的 80 端口映射到主机的 80 端口，主机的目录 &#x2F;data 映射到容器的 &#x2F;data。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -p 80:80 -v /data:/data -d nginx:latest<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker run -p 80:80 -v /data:/data -d nginx:latest</code></pre></div>
 
 <p>绑定容器的 8080 端口，并将其映射到本地主机 127.0.0.1 的 80 端口上。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -p 127.0.0.1:80:8080/tcp ubuntu bash<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker run -p 127.0.0.1:80:8080/tcp ubuntu bash</code></pre></div>
 
 
 <h4 id="3-4-3-容器启动-x2F-停止-x2F-重启-start-x2F-stop-x2F-restart"><a href="#3-4-3-容器启动-x2F-停止-x2F-重启-start-x2F-stop-x2F-restart" class="headerlink" title="3.4.3 容器启动&#x2F;停止&#x2F;重启(start&#x2F;stop&#x2F;restart)"></a>3.4.3 容器启动&#x2F;停止&#x2F;重启(start&#x2F;stop&#x2F;restart)</h4><p>使用<code>docker start</code>启动一个或多个已经被停止的容器；<br>使用<code>docker stop</code>停止一个运行中的容器；<br>使用<code>docker restart</code>重启容器。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker start [Options] Container [Container...]<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker stop [Options] Container [Container...]<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker restart [Options] Container [Container...]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker start [Options] Container [Container...]</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs bash">docker stop [Options] Container [Container...]</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs bash">docker restart [Options] Container [Container...]</code></pre></div>
 
 <p><strong>示例：</strong><br>启动已被停止的容器<code>mywalker</code>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker start mywalker<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker start mywalker</code></pre></div>
 
 <p>停止运行中的容器<code>mywalker</code>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker stop mywalker<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker stop mywalker</code></pre></div>
 
 <p>重启容器<code>mywalker</code>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker restart mywalker<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker restart mywalker</code></pre></div>
 
 
 <h4 id="3-4-4-容器强制停止-kill"><a href="#3-4-4-容器强制停止-kill" class="headerlink" title="3.4.4 容器强制停止(kill)"></a>3.4.4 容器强制停止(kill)</h4><p>使用<code>docker kill</code>杀掉一个运行中的容器。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">kill</span> [Options] Container [Container...]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">kill</span> [Options] Container [Container...]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
 <li>-s：向容器发送一个信号</li>
 </ul>
 <p><strong>示例：</strong><br>杀掉运行中的容器mynginx。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">kill</span> -s KILL myngin<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">kill</span> -s KILL myngin</code></pre></div>
 
 <p><strong>注意：</strong> </p>
 <blockquote>
@@ -1118,7 +1152,7 @@
 </blockquote>
 <h4 id="3-4-5-删除容器-rm"><a href="#3-4-5-删除容器-rm" class="headerlink" title="3.4.5 删除容器(rm)"></a>3.4.5 删除容器(rm)</h4><p>使用<code>docker rm</code>删除一个或多个容器。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> [Options] Container [Container...]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> [Options] Container [Container...]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -1127,16 +1161,16 @@
 <li>-v：删除与容器关联的卷</li>
 </ul>
 <p><strong>示例：</strong><br>强制删除容器 db01、db02。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> -f db01 db02<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> -f db01 db02</code></pre></div>
 
 <p>移除容器 nginx01 对容器 db01 的连接，连接名 db。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> -f db01 db02<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> -f db01 db02</code></pre></div>
 
 <p>删除容器 nginx01， 并删除容器挂载的数据卷。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> -v nginx01<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> -v nginx01</code></pre></div>
 
 <p>删除所有已经停止的容器。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> $(docker ps -a -q)<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> $(docker ps -a -q)</code></pre></div>
 
 <p><strong>注意：</strong></p>
 <blockquote>
@@ -1144,22 +1178,22 @@
 </blockquote>
 <h4 id="3-4-6-容器暂停与恢复-pause-x2F-unpause"><a href="#3-4-6-容器暂停与恢复-pause-x2F-unpause" class="headerlink" title="3.4.6 容器暂停与恢复(pause&#x2F;unpause)"></a>3.4.6 容器暂停与恢复(pause&#x2F;unpause)</h4><p>使用<code>docker pause</code>暂停容器中所有的进程；<br>使用<code>docker unpause</code>恢复容器中所有的进程。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pause [Options] Container [Container...]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker pause [Options] Container [Container...]</code></pre></div>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker unpause [Options] Container [Container...]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker unpause [Options] Container [Container...]</code></pre></div>
 
 <p><strong>示例：</strong><br>暂停数据库容器db01提供服务。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pause db01<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker pause db01</code></pre></div>
 
 <p>恢复数据库容器db01提供服务。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker unpause db01<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker unpause db01</code></pre></div>
 
 
 
 
 <h4 id="3-4-7-容器执行命令-exec"><a href="#3-4-7-容器执行命令-exec" class="headerlink" title="3.4.7 容器执行命令(exec)"></a>3.4.7 容器执行命令(exec)</h4><p>使用<code>docker exec</code>在运行的容器中执行命令。</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> [Options] Container Command [Arg...]<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> [Options] Container Command [Arg...]</code></pre></div>
 
 <p><strong>常用Options：</strong></p>
 <ul>
@@ -1168,29 +1202,30 @@
 <li>-t：分配一个伪终端</li>
 </ul>
 <p><strong>示例：</strong><br>在容器<code>mynginx</code>中以交互模式执行容器内<code>/root/runoob.sh</code>脚本。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> -it mynginx /bin/sh /root/runoob.sh<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> -it mynginx /bin/sh /root/runoob.sh</code></pre></div>
 
 <p>在容器 mynginx 中开启一个交互模式的终端。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> -i -t  mynginx /bin/bash<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> -i -t  mynginx /bin/bash</code></pre></div>
 <p>也可以通过<code>docker ps</code>命令查看已经在运行的容器，然后使用容器ID进入容器，再通过<code>docker exec</code>命令对指定的容器执行bash。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker ps<br>docker <span class="hljs-built_in">exec</span> -it 9df70f9a0714 /bin/bash<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker ps
+docker <span class="hljs-built_in">exec</span> -it 9df70f9a0714 /bin/bash</code></pre></div>
 
 
 
 <h3 id="3-5-Docker清理命令汇总"><a href="#3-5-Docker清理命令汇总" class="headerlink" title="3.5 Docker清理命令汇总"></a>3.5 Docker清理命令汇总</h3><p><strong>杀死所有正在运行的容器</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">kill</span> $(docker ps -a -q)<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">kill</span> $(docker ps -a -q)</code></pre></div>
 
 <p><strong>删除所有已经停止的容器</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> $(docker ps -a -q)<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker <span class="hljs-built_in">rm</span> $(docker ps -a -q)</code></pre></div>
 
 <p><strong>删除所有未打<code>dangling</code>标签的镜像</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker rmi $(docker images -q -f dangling=<span class="hljs-literal">true</span>)<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker rmi $(docker images -q -f dangling=<span class="hljs-literal">true</span>)</code></pre></div>
 
 <p><strong>通过镜像的<code>id</code>来删除指定镜像</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker rmi $(docker images -q)<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker rmi $(docker images -q)</code></pre></div>
 
 <p><strong>删除所有镜像</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker rmi &lt;image <span class="hljs-built_in">id</span>&gt;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker rmi &lt;image <span class="hljs-built_in">id</span>&gt;</code></pre></div>
 
 
 
@@ -1209,15 +1244,22 @@
 <h3 id="4-2-阿里云容器Hub"><a href="#4-2-阿里云容器Hub" class="headerlink" title="4.2 阿里云容器Hub"></a>4.2 阿里云容器Hub</h3><p>我们使用Docker的第一步，应该是获取一个官方的镜像，例如mysql、wordpress，基于这些基础镜像我们可以开发自己个性化的应用。我们可以使用Docker命令行工具来下载官方镜像。但是因为网络原因，我们下载一个300M的镜像需要很长的时间，甚至下载失败。可以通过设置镜像代理站点&#x2F;加速器的方式来对下载加速。<a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">阿里云容器Hub</a>服务提供了官方的镜像站点加速官方镜像的下载速度。在该网站登录可以获得加速器地址，格式为<code>https://*****.mirror.aliyuncs.com</code>。  </p>
 <p>当你下载安装的Docker Version不低于1.10时，建议直接通过<code>daemon config</code>进行配置。  </p>
 <p>使用配置文件 &#x2F;etc&#x2F;docker&#x2F;daemon.json(没有时新建该文件)。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;registry-mirrors&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;&lt;your accelerate address&gt;&quot;</span><span class="hljs-punctuation">]</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;registry-mirrors&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;&lt;your accelerate address&gt;&quot;</span><span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span></code></pre></div>
 
 <p>然后重启Docker Daemon就可以了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl daemon-reload<br>sudo systemctl restart docker<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">sudo systemctl daemon-reload
+sudo systemctl restart docker</code></pre></div>
 
 
 
-<h2 id="5-docker网络模式"><a href="#5-docker网络模式" class="headerlink" title="5 docker网络模式"></a>5 docker网络模式</h2><p>docker共有4种网络模式，其中自带3种网络模式：分别是<code>bridge</code>网络，<code>host</code>网络，<code>none</code>网络，可以使用以下命令查看。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ docker network <span class="hljs-built_in">ls</span><br>NETWORK ID     NAME      DRIVER    SCOPE<br>40bf4cb78250   bridge    bridge    <span class="hljs-built_in">local</span><br>59609bcae8c7   host      host      <span class="hljs-built_in">local</span><br>4ba3f22b12f7   none      null      <span class="hljs-built_in">local</span><br></code></pre></td></tr></table></figure>
+<h2 id="5-Docker网络模式"><a href="#5-Docker网络模式" class="headerlink" title="5 Docker网络模式"></a>5 Docker网络模式</h2><p>docker共有4种网络模式，其中自带3种网络模式：分别是<code>bridge</code>网络，<code>host</code>网络，<code>none</code>网络，可以使用以下命令查看。</p>
+<div class="code-wrapper"><pre><code class="hljs bash">$ docker network <span class="hljs-built_in">ls</span>
+NETWORK ID     NAME      DRIVER    SCOPE
+40bf4cb78250   bridge    bridge    <span class="hljs-built_in">local</span>
+59609bcae8c7   host      host      <span class="hljs-built_in">local</span>
+4ba3f22b12f7   none      null      <span class="hljs-built_in">local</span></code></pre></div>
 
 <h3 id="5-1-host网络"><a href="#5-1-host网络" class="headerlink" title="5.1 host网络"></a>5.1 host网络</h3><p>创建容器时，可以使用<code>-net=host</code>指定。</p>
 <p>启动的容器如果指定了网络类型为<code>host</code>模式，那么新创建的容器不会创建自己的虚拟网卡，而是直接使用宿主机的网卡和IP地址，因此容器里面查看到的IP信息就是宿主机的信息，访问容器的时候直接使用<code>宿主机IP:容器端口</code>即可，不过容器的其它资源们比如文件系统，系统进程等还是和宿主机保持隔离。</p>
@@ -1234,21 +1276,33 @@
 <h3 id="6-2-Docker-Container-SSH配置"><a href="#6-2-Docker-Container-SSH配置" class="headerlink" title="6.2 Docker Container SSH配置"></a>6.2 Docker Container SSH配置</h3><p>要想通过本地Pycharm调试服务器中的Docker容器中的代码，需要进行端口映射操作；即我们通过端口映射将容器内部向宿主机的一个端口转发出来，然后通过本地Pycharm连接该转发出来的端口，即可对容器内部代码进行调试。</p>
 <ul>
 <li><p>启动Dockers容器时指定参数<code>p</code>，将Dockers容器内部端口映射到宿主机端口：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -it -p 2021:22 55914e782b13<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker run -it -p 2021:22 55914e782b13</code></pre></div>
 <p>启动参数<code>-p 2021:22</code>表示端口映射，将容器内部的<code>22</code>端口映射到宿主机的<code>2021</code>端口。</p>
 </li>
 <li><p>Docker容器内安装openssh-server服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt update &amp;&amp; apt install openssh-server<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">apt update &amp;&amp; apt install openssh-server</code></pre></div>
 </li>
 <li><p>Docker容器内配置openssh-server服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 将root的密码修改为test</span><br>$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;root:12345&#x27;</span> | chpasswd<br><br><span class="hljs-comment"># 允许使用root身份登录</span><br>$ sed -i <span class="hljs-string">&#x27;s/PermitRootLogin prohibit-password/PermitRootLogin yes/&#x27;</span> /etc/ssh/sshd_config<br><br><span class="hljs-comment"># 限制 PAM方式登录</span><br>$ sed <span class="hljs-string">&#x27;s@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g&#x27;</span> -i /etc/pam.d/sshd<br><br>$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;export VISIBLE=now&quot;</span> &gt;&gt; /etc/profile<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 将root的密码修改为test</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;root:12345&#x27;</span> | chpasswd
+
+<span class="hljs-comment"># 允许使用root身份登录</span>
+$ sed -i <span class="hljs-string">&#x27;s/PermitRootLogin prohibit-password/PermitRootLogin yes/&#x27;</span> /etc/ssh/sshd_config
+
+<span class="hljs-comment"># 限制 PAM方式登录</span>
+$ sed <span class="hljs-string">&#x27;s@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g&#x27;</span> -i /etc/pam.d/sshd
+
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;export VISIBLE=now&quot;</span> &gt;&gt; /etc/profile</code></pre></div>
 <p>可将以上代码写成<code>docker_config.sh</code>文件，在Docker容器内运行</p>
 </li>
 <li><p>Docker容器内重启openssh-server服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">service ssh restart<br></code></pre></td></tr></table></figure></li>
+<div class="code-wrapper"><pre><code class="hljs bash">service ssh restart</code></pre></div></li>
 </ul>
 <h3 id="6-3-测试SSH端口映射配置"><a href="#6-3-测试SSH端口映射配置" class="headerlink" title="6.3 测试SSH端口映射配置"></a>6.3 测试SSH端口映射配置</h3><ul>
-<li>Docker容器中ssh服务端口在远程服务器上的映射<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker port &lt;your container name&gt; 22<br><br><span class="hljs-comment"># 输出结果如下所示</span><br>0.0.0.0:2021<br></code></pre></td></tr></table></figure></li>
+<li>Docker容器中ssh服务端口在远程服务器上的映射<div class="code-wrapper"><pre><code class="hljs bash">docker port &lt;your container name&gt; 22
+
+<span class="hljs-comment"># 输出结果如下所示</span>
+0.0.0.0:2021</code></pre></div></li>
 </ul>
 <h3 id="6-4-本地设备-Windows-x2F-Linux-的Pycharm配置"><a href="#6-4-本地设备-Windows-x2F-Linux-的Pycharm配置" class="headerlink" title="6.4 本地设备(Windows&#x2F;Linux)的Pycharm配置"></a>6.4 本地设备(Windows&#x2F;Linux)的Pycharm配置</h3><ul>
 <li><p>在Pycharm中配置Deployment</p>
@@ -1286,7 +1340,9 @@
 <li><p>配置Python远程解释器</p>
 <ul>
 <li><p>查看远程Python解释器位置(进入Docker容器内部)</p>
-   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> python<br><span class="hljs-comment"># 输出如下</span><br>/opt/conda/bin/python<br></code></pre></td></tr></table></figure>
+   <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> python
+<span class="hljs-comment"># 输出如下</span>
+/opt/conda/bin/python</code></pre></div>
 </li>
 <li><p>添加远程Python解释器<br>   在Pycharm中Add Python Interpret，选择SSH Interpret -&gt; Existing server configuration，选择我们刚才配置的SFTP Deployment，若无法下一步，点击<code>move</code>。接着Interpret路径选择刚才找到的Python解释器位置，同步文件夹(Sync folders)修改为远程项目地址，去掉勾选自动上传。</p>
    <div style="text-align: center">
@@ -1306,35 +1362,44 @@
 <h2 id="7-Docker使用常见问题"><a href="#7-Docker使用常见问题" class="headerlink" title="7. Docker使用常见问题"></a>7. Docker使用常见问题</h2><h3 id="7-1-Docker容器内用户选择"><a href="#7-1-Docker容器内用户选择" class="headerlink" title="7.1 Docker容器内用户选择"></a>7.1 Docker容器内用户选择</h3><p>Docker在启动时，默认使用的时宿主机的root用户的uid，这就导致两个问题：一时Docker具有宿主机的root权限，安全性很低；二是这样启动的容器如果挂载了宿主机文件，那么在运行时容器所生成的文件在宿主机看来具有root权限，owner是root，这样可能会存在权限上的一些问题。相应的解决方法有两个：</p>
 <ul>
 <li><p>启动容器时指定uid与gid<br>  如果我们想以宿主机的某个用户启动docker，那么在启动时指定参数<code>-u</code>，获取宿主机用户uid和gid的方法如下：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">id</span> &lt;username&gt;<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">id</span> &lt;username&gt;</code></pre></div>
 <p>  然后根据获得的id指定启动参数</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -it --gpus all --name=yuhong -u 1001:1001  55914e782b13<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash">docker run -it --gpus all --name=yuhong -u 1001:1001  55914e782b13</code></pre></div>
 <p>  但是这种方法要求docker容器内已经有对应id的用户组及用户，因此不方便使用。</p>
 </li>
 <li><p>启动容器后在内部建立用户<br>  同样的，我们先在获取宿主机用户uid和gid：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">id</span> &lt;username&gt;<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">id</span> &lt;username&gt;</code></pre></div>
 <p>  接着在容器内部建立对应id的用户，例如：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 首先设定root密码，防止无法切回账号</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;root:12345&#x27;</span> | chpasswd<br>groupadd -g 1001 student<br><span class="hljs-comment"># 指定命令行为bash</span><br>useradd -u 1001 -g student -s /bin/bash yuhong <br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;yuhong:12345&#x27;</span> | chpasswd<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 首先设定root密码，防止无法切回账号</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;root:12345&#x27;</span> | chpasswd
+groupadd -g 1001 student
+<span class="hljs-comment"># 指定命令行为bash</span>
+useradd -u 1001 -g student -s /bin/bash yuhong 
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;yuhong:12345&#x27;</span> | chpasswd</code></pre></div>
 <p>  切换至新建的用户</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">su yuhong<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash">su yuhong</code></pre></div>
 </li>
 <li><p>如果容器内部所使用的Python环境并非对所有用户有效(例如Conda环境)，可以先查找环境位置，切换用户再激活环境。</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">su root<br><span class="hljs-built_in">which</span> python<br>su yuhong<br><span class="hljs-built_in">cd</span> &lt;python path&gt;<br><span class="hljs-built_in">source</span> activate<br></code></pre></td></tr></table></figure>
+  <div class="code-wrapper"><pre><code class="hljs bash">su root
+<span class="hljs-built_in">which</span> python
+su yuhong
+<span class="hljs-built_in">cd</span> &lt;python path&gt;
+<span class="hljs-built_in">source</span> activate</code></pre></div>
 </li>
 <li><p>当在Pycharm中使用非root用户的Deployment时，此用户连接ssh远程解释器可能出现permission denied的情况，此时可以考虑在Docker容器内部建立该用户的home文件夹，并将文件夹权限修改为该用户可用(xrw)，由于此时该用户uid和gid都与root不同，因此需要给<code>777</code>权限。</p>
 </li>
 </ul>
 <h3 id="7-2-Docker容器内部无法联网"><a href="#7-2-Docker容器内部无法联网" class="headerlink" title="7.2 Docker容器内部无法联网"></a>7.2 Docker容器内部无法联网</h3><p>解决方法：在启动时增加参数<code>--net host</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -it --gpus all --name=yuhong --net host  55914e782b13<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker run -it --gpus all --name=yuhong --net host  55914e782b13</code></pre></div>
 
 
 <h3 id="7-3-ImportError"><a href="#7-3-ImportError" class="headerlink" title="7.3 ImportError"></a>7.3 ImportError</h3><p>在容器内部使用python，导入模块时报错”ImportError: libGL.so.1: cannot open shared object file: No such file or directory”。</p>
 <p>解决方法：容器内安装libgl1-mesa-glx</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt install libgl1-mesa-glx<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">apt install libgl1-mesa-glx</code></pre></div>
 
 <h3 id="7-4-No-command-specified"><a href="#7-4-No-command-specified" class="headerlink" title="7.4 No command specified"></a>7.4 No command specified</h3><p>从容器启动Docker的时候报错”Error response from daemon: No command specified”。</p>
 <p>解决方法：指定命令行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -t -i 87e5b6b3ccc1 /bin/bash<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash">docker run -t -i 87e5b6b3ccc1 /bin/bash</code></pre></div>
 
 
 
@@ -1427,6 +1492,12 @@
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/05/29/SSH/" title="SSH">
+                        <span class="hidden-mobile">SSH</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -1551,21 +1622,6 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
 
 
 
