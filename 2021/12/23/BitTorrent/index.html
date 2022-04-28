@@ -16,16 +16,16 @@
   <meta name="author" content="Deluge Walker">
   <meta name="keywords" content="">
   
-    <meta name="description" content="BitTorrent本文介绍几种跨平台BitTorrent客户端，并详细说明其在Linux操作系统上的使用方法。 1 Deluge1.1 简介Deluge是一款跨平台BitTorrent客户端，支持Linux (Debian, Fedora, OpenSUSE, Arch, Gentoo)、Win、Mac、FreeBSD多个平台，非常稳定，而且支持单一种子限速功能。部分PT站会对单一种子的速度有限">
+    <meta name="description" content="BitTorrent 本文介绍几种跨平台BitTorrent客户端，并详细说明其在Linux操作系统上的使用方法。  1 Deluge  1.1 简介 Deluge是一款跨平台BitTorrent客户端，支持Linux (Debian, Fedora, OpenSUSE, Arch, Gentoo)、Win、Mac、FreeBSD多个平台，非常稳定，而且支持单一种子限速功能。部分PT站会对单一种">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BitTorrent">
 <meta property="og:url" content="http://example.com/2021/12/23/BitTorrent/index.html">
-<meta property="og:site_name" content="DelugeWalker的博客">
-<meta property="og:description" content="BitTorrent本文介绍几种跨平台BitTorrent客户端，并详细说明其在Linux操作系统上的使用方法。 1 Deluge1.1 简介Deluge是一款跨平台BitTorrent客户端，支持Linux (Debian, Fedora, OpenSUSE, Arch, Gentoo)、Win、Mac、FreeBSD多个平台，非常稳定，而且支持单一种子限速功能。部分PT站会对单一种子的速度有限">
+<meta property="og:site_name" content="覆舟之水">
+<meta property="og:description" content="BitTorrent 本文介绍几种跨平台BitTorrent客户端，并详细说明其在Linux操作系统上的使用方法。  1 Deluge  1.1 简介 Deluge是一款跨平台BitTorrent客户端，支持Linux (Debian, Fedora, OpenSUSE, Arch, Gentoo)、Win、Mac、FreeBSD多个平台，非常稳定，而且支持单一种子限速功能。部分PT站会对单一种">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/articles/BitTorrent.png">
 <meta property="article:published_time" content="2021-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-27T13:04:40.175Z">
+<meta property="article:modified_time" content="2022-04-28T12:12:55.496Z">
 <meta property="article:author" content="Deluge Walker">
 <meta property="article:tag" content="Technology">
 <meta property="article:tag" content="Application">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/articles/BitTorrent.png">
   
   
-  <title>BitTorrent - DelugeWalker的博客</title>
+  <title>BitTorrent - 覆舟之水</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -266,58 +266,82 @@
             
             <div class="markdown-body">
               
-              <h1 id="BitTorrent"><a href="#BitTorrent" class="headerlink" title="BitTorrent"></a>BitTorrent</h1><p>本文介绍几种跨平台BitTorrent客户端，并详细说明其在Linux操作系统上的使用方法。</p>
-<h2 id="1-Deluge"><a href="#1-Deluge" class="headerlink" title="1 Deluge"></a>1 Deluge</h2><h3 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h3><p><a target="_blank" rel="noopener" href="https://dev.deluge-torrent.org/">Deluge</a>是一款跨平台BitTorrent客户端，支持Linux (Debian, Fedora, OpenSUSE, Arch, Gentoo)、Win、Mac、FreeBSD多个平台，非常稳定，而且支持单一种子限速功能。部分PT站会对单一种子的速度有限制，如果超速，账号可能会被警告甚至封禁。如果PT站有限速要求，推荐使用Deluge。比较遗憾的是，Deluge没有官方的CentOS源。如果需要在CentOS安装，可尝试下第三方的源。各版本的安装包均在<a target="_blank" rel="noopener" href="https://dev.deluge-torrent.org/">Deluge官网</a>可以下载。</p>
+              <h1 id="bittorrent"><a class="markdownIt-Anchor" href="#bittorrent"></a> BitTorrent</h1>
+<p>本文介绍几种跨平台BitTorrent客户端，并详细说明其在Linux操作系统上的使用方法。</p>
+<h2 id="1-deluge"><a class="markdownIt-Anchor" href="#1-deluge"></a> 1 Deluge</h2>
+<h3 id="11-简介"><a class="markdownIt-Anchor" href="#11-简介"></a> 1.1 简介</h3>
+<p><a target="_blank" rel="noopener" href="https://dev.deluge-torrent.org/">Deluge</a>是一款跨平台BitTorrent客户端，支持Linux (Debian, Fedora, OpenSUSE, Arch, Gentoo)、Win、Mac、FreeBSD多个平台，非常稳定，而且支持单一种子限速功能。部分PT站会对单一种子的速度有限制，如果超速，账号可能会被警告甚至封禁。如果PT站有限速要求，推荐使用Deluge。比较遗憾的是，Deluge没有官方的CentOS源。如果需要在CentOS安装，可尝试下第三方的源。各版本的安装包均在<a target="_blank" rel="noopener" href="https://dev.deluge-torrent.org/">Deluge官网</a>可以下载。</p>
 <p>以下说明Ubuntu安装Deluge的具体步骤。</p>
-<h3 id="1-2-Ubuntu安装Deluge"><a href="#1-2-Ubuntu安装Deluge" class="headerlink" title="1.2 Ubuntu安装Deluge"></a>1.2 Ubuntu安装Deluge</h3><ul>
-<li><p>添加Deluge PPA Repository以防止无法安装最新版本</p>
+<h3 id="12-ubuntu安装deluge"><a class="markdownIt-Anchor" href="#12-ubuntu安装deluge"></a> 1.2 Ubuntu安装Deluge</h3>
+<ul>
+<li>
+<p>添加Deluge PPA Repository以防止无法安装最新版本</p>
   <div class="code-wrapper"><pre><code class="hljs bash">sudo add-apt-repository ppa:deluge-team/stable
 sudo apt update
 sudo apt install deluge</code></pre></div>
 </li>
-<li><p>安装控制台版本Deluge(推荐，可使用web打开并在后台运行)</p>
+<li>
+<p>安装控制台版本Deluge(推荐，可使用web打开并在后台运行)</p>
   <div class="code-wrapper"><pre><code class="hljs bash">sudo apt-get install deluged deluge-web deluge-console</code></pre></div>
 </li>
-<li><p>安装可视化版本Deluge</p>
-  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt-get install deluge</code></pre></div></li>
+<li>
+<p>安装可视化版本Deluge</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt-get install deluge</code></pre></div>
+</li>
 </ul>
-<h3 id="1-3-Deluge使用"><a href="#1-3-Deluge使用" class="headerlink" title="1.3 Deluge使用"></a>1.3 Deluge使用</h3><ul>
-<li><p>deluge-web使用</p>
+<h3 id="13-deluge使用"><a class="markdownIt-Anchor" href="#13-deluge使用"></a> 1.3 Deluge使用</h3>
 <ul>
-<li><p>启动deluge-web</p>
+<li>
+<p>deluge-web使用</p>
+<ul>
+<li>
+<p>启动deluge-web</p>
   <div class="code-wrapper"><pre><code class="hljs bash">deluge-web --fork</code></pre></div>
-<p>  <code>--fork</code>表示在后台运行</p>
+<p><code>--fork</code>表示在后台运行</p>
 </li>
-<li><p>浏览器打开可视化界面<br>  在本地浏览器输入<code>127.0.0.1:8112</code>即可访问deluge-web，默认密码：<code>deluge</code></p>
+<li>
+<p>浏览器打开可视化界面<br />
+在本地浏览器输入<code>127.0.0.1:8112</code>即可访问deluge-web，默认密码：<code>deluge</code></p>
 </li>
-<li><p>远程ipv6地址访问<br>  deluge-web的端口只对ipv4监听，我们可以考虑使用socat进行监听端口转发，将内网ipv4端口转发至公网ipv6端口，从而达到外网访问的目的。</p>
+<li>
+<p>远程ipv6地址访问<br />
+deluge-web的端口只对ipv4监听，我们可以考虑使用socat进行监听端口转发，将内网ipv4端口转发至公网ipv6端口，从而达到外网访问的目的。</p>
 <ul>
-<li><p>安装socat</p>
+<li>安装socat</li>
+</ul>
   <div class="code-wrapper"><pre><code class="hljs bash">sudo apt install socat</code></pre></div>
-</li>
-<li><p>监听端口转发</p>
+<ul>
+<li>监听端口转发</li>
+</ul>
   <div class="code-wrapper"><pre><code class="hljs bash">socat TCP6-LISTEN:8113,reuseaddr,fork TCP4:10.31.13.227:8112</code></pre></div>
-<p>  ipv6端口选择<code>8113</code>是因为<code>8112</code>端口已被deluge-web进程占用。</p>
+<p>ipv6端口选择<code>8113</code>是因为<code>8112</code>端口已被deluge-web进程占用。</p>
 </li>
 </ul>
 </li>
-</ul>
+<li>
+<p>deluge-dkg使用</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">deluge</code></pre></div>
 </li>
-<li><p>deluge-dkg使用</p>
-  <div class="code-wrapper"><pre><code class="hljs bash">deluge</code></pre></div></li>
 </ul>
-<h1 id="2-qBittorrent"><a href="#2-qBittorrent" class="headerlink" title="2 qBittorrent"></a>2 qBittorrent</h1><h2 id="2-1-简介"><a href="#2-1-简介" class="headerlink" title="2.1 简介"></a>2.1 简介</h2><p>qBittorrent项目旨在为μTorrent提供一种开源软件替代品。此外，qBittorrent在所有主要平台（FreeBSD，Linux，macOS，OS&#x2F;2，Windows）上运行并提供相同的功能。qBittorrent基于Qt工具包和libtorrent-rasterbar库。</p>
+<h1 id="2-qbittorrent"><a class="markdownIt-Anchor" href="#2-qbittorrent"></a> 2 qBittorrent</h1>
+<h2 id="21-简介"><a class="markdownIt-Anchor" href="#21-简介"></a> 2.1 简介</h2>
+<p>qBittorrent项目旨在为μTorrent提供一种开源软件替代品。此外，qBittorrent在所有主要平台（FreeBSD，Linux，macOS，OS/2，Windows）上运行并提供相同的功能。qBittorrent基于Qt工具包和libtorrent-rasterbar库。</p>
 <p>以下说明Ubuntu安装qBittorrent的具体步骤。</p>
-<h2 id="2-2-Ubuntu安装qBittorrent"><a href="#2-2-Ubuntu安装qBittorrent" class="headerlink" title="2.2 Ubuntu安装qBittorrent"></a>2.2 Ubuntu安装qBittorrent</h2><ul>
-<li><p>添加qBittorrent PPA Repository以防止无法安装最新版本</p>
+<h2 id="22-ubuntu安装qbittorrent"><a class="markdownIt-Anchor" href="#22-ubuntu安装qbittorrent"></a> 2.2 Ubuntu安装qBittorrent</h2>
+<ul>
+<li>
+<p>添加qBittorrent PPA Repository以防止无法安装最新版本</p>
   <div class="code-wrapper"><pre><code class="hljs bash">sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 sudo apt update</code></pre></div>
 </li>
-<li><p>安装qBittorrent(WebUI)</p>
-  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt-get install qbittorrent qbittorrent-nox</code></pre></div></li>
+<li>
+<p>安装qBittorrent(WebUI)</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt-get install qbittorrent qbittorrent-nox</code></pre></div>
+</li>
 </ul>
-<h3 id="2-3-Deluge使用"><a href="#2-3-Deluge使用" class="headerlink" title="2.3 Deluge使用"></a>2.3 Deluge使用</h3><div class="code-wrapper"><pre><code class="hljs bash">qbittorrent-nox --webui-port=8114</code></pre></div>
-<p>此进程会占用当前命令行，建议在tmux&#x2F;screen中打开。</p>
+<h3 id="23-deluge使用"><a class="markdownIt-Anchor" href="#23-deluge使用"></a> 2.3 Deluge使用</h3>
+<div class="code-wrapper"><pre><code class="hljs bash">qbittorrent-nox --webui-port=8114</code></pre></div>
+<p>此进程会占用当前命令行，建议在tmux/screen中打开。</p>
 
               
             </div>
@@ -336,6 +360,16 @@ sudo apt update</code></pre></div>
       <span class="category-chain">
         
   <a href="/categories/Technology/" class="category-chain-item">Technology</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Tutorial/" class="category-chain-item">Tutorial</a>
   
   
 
