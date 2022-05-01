@@ -1,0 +1,14 @@
+
+
+@font-face {
+font-family: 'HYTangMeiRen';
+font-style: normal;
+font-weight: 400;
+src: url('../fonts/HYTangMeiRen65W.eot'); /* IE9 Compat Modes */
+src: local(''),
+        url('../fonts/HYTangMeiRen65W.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/HYTangMeiRen65W.woff2') format('woff2'), /* Super Modern Browsers */
+        url('../fonts/HYTangMeiRen65W.woff') format('woff'), /* Modern Browsers */
+        url('../fonts/HYTangMeiRen45W.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/HYTangMeiRen65W.svg#NotoSerifSC') format('svg'); /* Legacy iOS */
+}
