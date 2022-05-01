@@ -16,24 +16,24 @@
   <meta name="author" content="Deluge Walker">
   <meta name="keywords" content="">
   
-    <meta name="description" content="BitTorrent 本文介绍几种跨平台BitTorrent客户端，并详细说明其在Linux操作系统上的使用方法。  1 Deluge  1.1 简介 Deluge是一款跨平台BitTorrent客户端，支持Linux (Debian, Fedora, OpenSUSE, Arch, Gentoo)、Win、Mac、FreeBSD多个平台，非常稳定，而且支持单一种子限速功能。部分PT站会对单一种">
+    <meta name="description" content="Neo4j 常用数据库：gStore，Jena，Neo4j，Stardog  1 Neo4j安装  1.1 Windows安装   安装 java JDK：   下载 https:&#x2F;&#x2F;www.oracle.com&#x2F;java&#x2F;technologies&#x2F;javase&#x2F;jdk15-archive-downloads.html   配置环境变量： 设置 --&gt; 系统 --&gt; 关于 --&amp;gt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BitTorrent">
-<meta property="og:url" content="http://example.com/2021/12/23/BitTorrent/index.html">
+<meta property="og:title" content="Neo4j">
+<meta property="og:url" content="http://example.com/2021/07/06/Neo4j/index.html">
 <meta property="og:site_name" content="覆舟之水">
-<meta property="og:description" content="BitTorrent 本文介绍几种跨平台BitTorrent客户端，并详细说明其在Linux操作系统上的使用方法。  1 Deluge  1.1 简介 Deluge是一款跨平台BitTorrent客户端，支持Linux (Debian, Fedora, OpenSUSE, Arch, Gentoo)、Win、Mac、FreeBSD多个平台，非常稳定，而且支持单一种子限速功能。部分PT站会对单一种">
+<meta property="og:description" content="Neo4j 常用数据库：gStore，Jena，Neo4j，Stardog  1 Neo4j安装  1.1 Windows安装   安装 java JDK：   下载 https:&#x2F;&#x2F;www.oracle.com&#x2F;java&#x2F;technologies&#x2F;javase&#x2F;jdk15-archive-downloads.html   配置环境变量： 设置 --&gt; 系统 --&gt; 关于 --&amp;gt">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/img/articles/BitTorrent.png">
-<meta property="article:published_time" content="2021-12-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-28T12:12:55.496Z">
+<meta property="og:image" content="http://example.com/img/articles/Neo4j.svg">
+<meta property="article:published_time" content="2021-07-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-30T09:18:56.147Z">
 <meta property="article:author" content="Deluge Walker">
 <meta property="article:tag" content="Technology">
-<meta property="article:tag" content="Application">
+<meta property="article:tag" content="Database">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/articles/BitTorrent.png">
+<meta name="twitter:image" content="http://example.com/img/articles/Neo4j.svg">
   
   
-  <title>BitTorrent - 覆舟之水</title>
+  <title>Neo4j - 覆舟之水</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -184,13 +184,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/articles/BitTorrent.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/articles/Neo4j.svg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">BitTorrent</span>
+            <span id="subtitle">Neo4j</span>
           
         </div>
 
@@ -201,8 +201,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2021-12-23 00:00" pubdate>
-          December 23, 2021 am
+        <time datetime="2021-07-06 00:00" pubdate>
+          July 6, 2021 am
         </time>
       </span>
     
@@ -213,7 +213,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k words
+          4.1k words
         
       </span>
     
@@ -224,7 +224,7 @@
         
         
         
-          12 mins
+          35 mins
         
       </span>
     
@@ -262,86 +262,250 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">BitTorrent</h1>
+            <h1 style="display: none">Neo4j</h1>
             
             <div class="markdown-body">
               
-              <h1 id="bittorrent"><a class="markdownIt-Anchor" href="#bittorrent"></a> BitTorrent</h1>
-<p>本文介绍几种跨平台BitTorrent客户端，并详细说明其在Linux操作系统上的使用方法。</p>
-<h2 id="1-deluge"><a class="markdownIt-Anchor" href="#1-deluge"></a> 1 Deluge</h2>
-<h3 id="11-简介"><a class="markdownIt-Anchor" href="#11-简介"></a> 1.1 简介</h3>
-<p><a target="_blank" rel="noopener" href="https://dev.deluge-torrent.org/">Deluge</a>是一款跨平台BitTorrent客户端，支持Linux (Debian, Fedora, OpenSUSE, Arch, Gentoo)、Win、Mac、FreeBSD多个平台，非常稳定，而且支持单一种子限速功能。部分PT站会对单一种子的速度有限制，如果超速，账号可能会被警告甚至封禁。如果PT站有限速要求，推荐使用Deluge。比较遗憾的是，Deluge没有官方的CentOS源。如果需要在CentOS安装，可尝试下第三方的源。各版本的安装包均在<a target="_blank" rel="noopener" href="https://dev.deluge-torrent.org/">Deluge官网</a>可以下载。</p>
-<p>以下说明Ubuntu安装Deluge的具体步骤。</p>
-<h3 id="12-ubuntu安装deluge"><a class="markdownIt-Anchor" href="#12-ubuntu安装deluge"></a> 1.2 Ubuntu安装Deluge</h3>
+              <h1 id="neo4j"><a class="markdownIt-Anchor" href="#neo4j"></a> Neo4j</h1>
+<p><em>常用数据库：gStore，Jena，Neo4j，Stardog</em></p>
+<h2 id="1-neo4j安装"><a class="markdownIt-Anchor" href="#1-neo4j安装"></a> 1 Neo4j安装</h2>
+<h3 id="11-windows安装"><a class="markdownIt-Anchor" href="#11-windows安装"></a> 1.1 Windows安装</h3>
 <ul>
 <li>
-<p>添加Deluge PPA Repository以防止无法安装最新版本</p>
-  <div class="code-wrapper"><pre><code class="hljs bash">sudo add-apt-repository ppa:deluge-team/stable
-sudo apt update
-sudo apt install deluge</code></pre></div>
-</li>
-<li>
-<p>安装控制台版本Deluge(推荐，可使用web打开并在后台运行)</p>
-  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt-get install deluged deluge-web deluge-console</code></pre></div>
-</li>
-<li>
-<p>安装可视化版本Deluge</p>
-  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt-get install deluge</code></pre></div>
-</li>
-</ul>
-<h3 id="13-deluge使用"><a class="markdownIt-Anchor" href="#13-deluge使用"></a> 1.3 Deluge使用</h3>
+<p>安装 java JDK：</p>
 <ul>
 <li>
-<p>deluge-web使用</p>
-<ul>
-<li>
-<p>启动deluge-web</p>
-  <div class="code-wrapper"><pre><code class="hljs bash">deluge-web --fork</code></pre></div>
-<p><code>--fork</code>表示在后台运行</p>
+<p>下载<br />
+<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html">https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html</a></p>
 </li>
 <li>
-<p>浏览器打开可视化界面<br />
-在本地浏览器输入<code>127.0.0.1:8112</code>即可访问deluge-web，默认密码：<code>deluge</code></p>
+<p>配置环境变量：<br />
+设置 --&gt; 系统 --&gt; 关于 --&gt; 高级系统设置 --&gt; 环境变量 --&gt; 系统变量 --&gt; 编辑Path</p>
 </li>
 <li>
-<p>远程ipv6地址访问<br />
-deluge-web的端口只对ipv4监听，我们可以考虑使用socat进行监听端口转发，将内网ipv4端口转发至公网ipv6端口，从而达到外网访问的目的。</p>
-<ul>
-<li>安装socat</li>
-</ul>
-  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt install socat</code></pre></div>
-<ul>
-<li>监听端口转发</li>
-</ul>
-  <div class="code-wrapper"><pre><code class="hljs bash">socat TCP6-LISTEN:8113,reuseaddr,fork TCP4:10.31.13.227:8112</code></pre></div>
-<p>ipv6端口选择<code>8113</code>是因为<code>8112</code>端口已被deluge-web进程占用。</p>
+<p>查看安装状态</p>
+<div class="code-wrapper"><pre><code class="hljs bash">$ java -version</code></pre></div>
 </li>
 </ul>
 </li>
 <li>
-<p>deluge-dkg使用</p>
-  <div class="code-wrapper"><pre><code class="hljs bash">deluge</code></pre></div>
-</li>
-</ul>
-<h1 id="2-qbittorrent"><a class="markdownIt-Anchor" href="#2-qbittorrent"></a> 2 qBittorrent</h1>
-<h2 id="21-简介"><a class="markdownIt-Anchor" href="#21-简介"></a> 2.1 简介</h2>
-<p>qBittorrent项目旨在为μTorrent提供一种开源软件替代品。此外，qBittorrent在所有主要平台（FreeBSD，Linux，macOS，OS/2，Windows）上运行并提供相同的功能。qBittorrent基于Qt工具包和libtorrent-rasterbar库。</p>
-<p>以下说明Ubuntu安装qBittorrent的具体步骤。</p>
-<h2 id="22-ubuntu安装qbittorrent"><a class="markdownIt-Anchor" href="#22-ubuntu安装qbittorrent"></a> 2.2 Ubuntu安装qBittorrent</h2>
+<p>安装 neo4j：</p>
 <ul>
 <li>
-<p>添加qBittorrent PPA Repository以防止无法安装最新版本</p>
-  <div class="code-wrapper"><pre><code class="hljs bash">sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
-sudo apt update</code></pre></div>
+<p>下载(社区版即可)<br />
+<a target="_blank" rel="noopener" href="https://neo4j.com/download-center/">https://neo4j.com/download-center/</a></p>
 </li>
 <li>
-<p>安装qBittorrent(WebUI)</p>
-  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt-get install qbittorrent qbittorrent-nox</code></pre></div>
+<p>配置环境变量</p>
+</li>
+<li>
+<p>查看安装状态：</p>
+<div class="code-wrapper"><pre><code class="hljs bash">$ neo4j.bat console</code></pre></div>
+<blockquote>
+<p>如果启动失败，很可能是JDK版本问题，JDK16版本过高！</p>
+</blockquote>
+</li>
+<li>
+<p>Web服务登录<br />
+默认账号密码均为<code>neo4j</code>，首次登陆会提示修改密码。</p>
 </li>
 </ul>
-<h3 id="23-deluge使用"><a class="markdownIt-Anchor" href="#23-deluge使用"></a> 2.3 Deluge使用</h3>
-<div class="code-wrapper"><pre><code class="hljs bash">qbittorrent-nox --webui-port=8114</code></pre></div>
-<p>此进程会占用当前命令行，建议在tmux/screen中打开。</p>
+</li>
+</ul>
+<h3 id="12-linux安装"><a class="markdownIt-Anchor" href="#12-linux安装"></a> 1.2 Linux安装</h3>
+<ul>
+<li>
+<p>安装Java环境</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">$ sudo apt update
+$ sudo apt install openjdk-11-jdk</code></pre></div>
+</li>
+<li>
+<p>安装Neo4j</p>
+<ul>
+<li>去<a target="_blank" rel="noopener" href="https://neo4j.com/download-center/#community">Neo4j官网</a>下载Linux的安装包<code>neo4j-community-4.2.7-unix</code></li>
+<li>解压该文件即可。<div class="code-wrapper"><pre><code class="hljs bash">tar -xf neo4j-community-4.2.7-unix.tar.gz</code></pre></div>
+</li>
+<li>进入解压路径中的conf，修改neo4j.conf文件。<div class="code-wrapper"><pre><code class="hljs bash">sudo vim neo4j.conf</code></pre></div>
+<ul>
+<li>将第22行<code>dbms.directories.import=import</code>前加上注释</li>
+<li>修改45行为<code>dbms.memory.heap.initial_size=1g</code></li>
+<li>修改46行为<code>dbms.memory.heap.max_size=2g</code></li>
+<li>修改51行为<code>dbms.memory.pagecache.size=10g</code></li>
+<li>修改70行为<code>dbms.default_listen_address=0.0.0.0</code></li>
+<li>修改229行为<code>dbms.security.allow_csv_import_from_file_urls=true</code></li>
+<li>修改249行为<code>dbms.read_only=false</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-neo4j命令"><a class="markdownIt-Anchor" href="#2-neo4j命令"></a> 2 Neo4j命令</h2>
+<h3 id="21-基本操作增删改查"><a class="markdownIt-Anchor" href="#21-基本操作增删改查"></a> 2.1 基本操作(增删改查)</h3>
+<h4 id="211-创建"><a class="markdownIt-Anchor" href="#211-创建"></a> 2.1.1 创建</h4>
+<ul>
+<li>
+<p>创建节点</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher"># (n:标签 &#123;属性1:&#x27;*&#x27;, 属性2:*&#125;)  属性值*：数值可不打引号，英文字母或汉字必须打引号
+create (n:Person&#123;name:&#x27;我&#x27;,age:24&#125;)</code></pre></div>
+</li>
+<li>
+<p>创建带有关系属性的节点</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">#  (p:标签 &#123;属性1:&#x27;*&#x27;, 属性2:*&#125;)-[:关系&#123;属性:&#x27;*&#x27;&#125;]-&gt;(n：标签 &#123;属性1:&#x27;*&#x27;, 属性2:*&#125;)
+create (p:Person&#123;name:&#x27;我&#x27;,age:24&#125;)-[:同学&#123;学校:&#x27;高中&#x27;&#125;]-&gt;(n:Person&#123;name:&#x27;小明&#x27;,age:23&#125;)</code></pre></div>
+</li>
+</ul>
+<h4 id="212-删除"><a class="markdownIt-Anchor" href="#212-删除"></a> 2.1.2 删除</h4>
+<ul>
+<li>
+<p>删除节点，带有关系的节点无法用该命令删除</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">match (n:Person&#123;name:&#x27;我&#x27;&#125;) delete n</code></pre></div>
+</li>
+<li>
+<p>删除关系</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">match (p:Person&#123;name:&#x27;我&#x27;,age:24&#125;)-[f:同学]-&gt;(n:Person&#123;name:&#x27;小明&#x27;,age:23&#125;) delete f,n,p</code></pre></div>
+</li>
+</ul>
+<h4 id="213-修改"><a class="markdownIt-Anchor" href="#213-修改"></a> 2.1.3 修改</h4>
+<ul>
+<li>
+<p>给某节点增加标签</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">match (t:Person) where id(t)=0 set t:好人 return t</code></pre></div>
+</li>
+<li>
+<p>给某节点增加或者更改属性</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">match (t:Person) where id(t)=0 set t.战斗力=200 return t</code></pre></div>
+</li>
+</ul>
+<h4 id="214-查询"><a class="markdownIt-Anchor" href="#214-查询"></a> 2.1.4 查询</h4>
+<p>Cypher使用match子句查询数据，是Cypher最基本的查询子句。在查询数据时，使用Match子句指定搜索的模式，这是从Neo4j数据库查询数据的最主要的方法。match子句之后通常会跟着where子句，向模式中添加过滤性的谓词，用于对数据进行过滤。在查询数据时，查询语句分为多个部分，with子句用于对上一个查询部分的结果进行处理，以输出到下一个查询部分。</p>
+<ul>
+<li>
+<p>节点查询<br />
+对节点进行查询，是查询graph的基本操作，节点具有标签和属性，Match查询不仅能够按照标签对节点进行查询，还能按照属性对节点进行查询。 当没有指定节点的标签或属性时，默认是选择节点全部的标签和属性。</p>
+<ul>
+<li>
+<p>查询所有节点<br />
+仅仅指定一个节点的模式，没有标签（Lable）和属性，表示查询所有的节点：</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (n)
+RETURN n</code></pre></div>
+</li>
+<li>
+<p>查询带有特定标签的节点<br />
+当模式中指定标签时，表示只查询带有特定标签的节点，有多个标签的节点，只要含有指定的标签，就成功匹配，绑定该节点。</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (movie:Movie)
+RETURN movie.title</code></pre></div>
+</li>
+<li>
+<p>查询相关的任意节点<br />
+指定一个节点，节点的name属性是’Oliver Stone’，查询跟该节点相关的其他节点：</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (director &#123; name: &#x27;Oliver Stone&#x27; &#125;)--(movie)
+RETURN movie.title</code></pre></div>
+</li>
+<li>
+<p>查询相关的特定节点<br />
+指定一个节点，查询跟节点相关的节点，并指定相关节点的标签</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (:Person &#123; name: &#x27;Oliver Stone&#x27; &#125;)--(movie:Movie)
+RETURN movie.title</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>关系查询<br />
+对关系进行查询，关系的模式是由两个节点来决定的。</p>
+<ul>
+<li>
+<p>指定关系的方向来查询节点<br />
+对于标签是Person，并且name属性是’Oliver Stone’的节点，该节点指向另外一个节点movie：</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (:Person &#123; name: &#x27;Oliver Stone&#x27; &#125;)--&gt;(movie)
+RETURN movie.title</code></pre></div>
+</li>
+<li>
+<p>查询关系的类型<br />
+在查询关系时，可以在match子句中指定关系变量，后续子句可以引用该变量，例如，使用type()函数查看关系的类型：</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (:Person &#123; name: &#x27;Oliver Stone&#x27; &#125;)-[r]-&gt;(movie)
+RETURN type(r)</code></pre></div>
+</li>
+<li>
+<p>匹配关系类型<br />
+在匹配关系时，可以指定关系的类型</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (wallstreet:Movie &#123; title: &#x27;Wall Street&#x27; &#125;)&lt;-[:ACTED_IN]-(actor)
+RETURN actor.name</code></pre></div>
+</li>
+<li>
+<p>匹配多种关系类型<br />
+在匹配关系时，可以指定多种关系的类型，只需要匹配其中任意一个关系类型就匹配成功</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (wallstreet &#123; title: &#x27;Wall Street&#x27; &#125;)&lt;-[:ACTED_IN|:DIRECTED]-(person)
+RETURN person.name</code></pre></div>
+</li>
+<li>
+<p>匹配关系类型，并指定关系变量</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (wallstreet &#123; title: &#x27;Wall Street&#x27; &#125;)&lt;-[r:ACTED_IN]-(actor)
+RETURN r.role</code></pre></div>
+</li>
+<li>
+<p>匹配多个关系</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (charlie &#123; name: &#x27;Charlie Sheen&#x27; &#125;)-[:ACTED_IN]-&gt;(movie)&lt;-[:DIRECTED]-(director)
+RETURN movie.title, director.name</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>匹配路径<br />
+路径是节点和关系交替组合构成的序列，图中必须满足路径指定的模式，才能返回路径中的元素。</p>
+<ul>
+<li>
+<p>对变长路径的查询</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (martin &#123; name: &#x27;Charlie Sheen&#x27; &#125;)-[:ACTED_IN*1..3]-(movie:Movie)
+RETURN movie.title</code></pre></div>
+</li>
+<li>
+<p>路径变量</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH p =(actor &#123; name: &#x27;Charlie Sheen&#x27; &#125;)-[:ACTED_IN*2]-(co_actor)
+RETURN relationships(p),p</code></pre></div>
+</li>
+<li>
+<p>根据路径的属性进行匹配</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH p =(charlie:Person)-[* &#123; blocked:false &#125;]-(martin:Person)
+WHERE charlie.name = &#x27;Charlie Sheen&#x27; AND martin.name = &#x27;Martin Sheen&#x27;
+RETURN p</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="215-清空数据库"><a class="markdownIt-Anchor" href="#215-清空数据库"></a> 2.1.5 清空数据库</h4>
+  <div class="code-wrapper"><pre><code class="hljs Cypher">match (n)
+detach delete n</code></pre></div>
+<h2 id="3-数据库迁移"><a class="markdownIt-Anchor" href="#3-数据库迁移"></a> 3 数据库迁移</h2>
+<ul>
+<li>
+<p>导出数据库(dump database)</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">$ neo4j-admin dump --database=&lt;database&gt; --to=&lt;destination-path&gt;</code></pre></div>
+</li>
+<li>
+<p>导入数据库(load database)</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">$ neo4j-admin load --database=&lt;database&gt; --from=&lt;archive-path&gt;  --force</code></pre></div>
+</li>
+</ul>
+<h2 id="4-py2neo"><a class="markdownIt-Anchor" href="#4-py2neo"></a> 4 Py2neo</h2>
+<ul>
+<li>
+<p>安装：</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">$ pip install py2neo</code></pre></div>
+</li>
+<li>
+<p>使用</p>
+  <div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> py2neo <span class="hljs-keyword">import</span> Graph, Node, Relationship
+
+<span class="hljs-comment"># 创建节点及关系的命令示例：</span>
+head_node = Node(head_label, name=node_name))
+tail_node = Node(tail_label, name=node_name))
+relation = Relationship(head_node, relation, tail_node)
+
+self.graph.create(head_node)
+self.graph.create(tail_node)
+self.graph.create(relation)</code></pre></div>
+</li>
+</ul>
 
               
             </div>
@@ -386,7 +550,7 @@ sudo apt update</code></pre></div>
       
         <a href="/tags/Technology/">#Technology</a>
       
-        <a href="/tags/Application/">#Application</a>
+        <a href="/tags/Database/">#Database</a>
       
     </div>
   
@@ -398,8 +562,8 @@ sudo apt update</code></pre></div>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>BitTorrent</div>
-      <div>http://example.com/2021/12/23/BitTorrent/</div>
+      <div>Neo4j</div>
+      <div>http://example.com/2021/07/06/Neo4j/</div>
     </div>
     <div class="license-meta">
       
@@ -411,7 +575,7 @@ sudo apt update</code></pre></div>
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 23, 2021</div>
+          <div>July 6, 2021</div>
         </div>
       
       
@@ -441,9 +605,9 @@ sudo apt update</code></pre></div>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F(Regular-Expression)/" title="正则表达式(Regular Expression)">
+                      <a href="/2021/08/17/Latex/" title="Latex">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">正则表达式(Regular Expression)</span>
+                        <span class="hidden-mobile">Latex</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -451,8 +615,8 @@ sudo apt update</code></pre></div>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/12/21/Docker/" title="Docker">
-                        <span class="hidden-mobile">Docker</span>
+                      <a href="/2021/05/29/SSH/" title="SSH">
+                        <span class="hidden-mobile">SSH</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
