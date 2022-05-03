@@ -1,0 +1,1708 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/deluge.png">
+  <link rel="icon" href="/img/deluge.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2b3f3d">
+  <meta name="author" content="Deluge Walker">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Linux  1 Linux安装 这里以Linux发行版Ubuntu 20.04.2.0 LTS为例，介绍安装过程。LTS即Long Term Support，长时间支持版本，一般是三年。Ubuntu定期并有计划的不断发布其新版本，一直坚持每6个月发布一个新的版本。并致力于在该发行版的支持期内持续的发布安全和关键补丁。Ubuntu将为每个版本提供至少18个月的支持。  1.1 下载Ubuntu安">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="http://example.com/linux/index.html">
+<meta property="og:site_name" content="覆舟之水">
+<meta property="og:description" content="Linux  1 Linux安装 这里以Linux发行版Ubuntu 20.04.2.0 LTS为例，介绍安装过程。LTS即Long Term Support，长时间支持版本，一般是三年。Ubuntu定期并有计划的不断发布其新版本，一直坚持每6个月发布一个新的版本。并致力于在该发行版的支持期内持续的发布安全和关键补丁。Ubuntu将为每个版本提供至少18个月的支持。  1.1 下载Ubuntu安">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/articles/Linux.jpg">
+<meta property="article:published_time" content="2021-12-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-03T08:56:50.751Z">
+<meta property="article:author" content="Deluge Walker">
+<meta property="article:tag" content="Technology">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/articles/Linux.jpg">
+  
+  
+  <title>Linux - 覆舟之水</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>覆舟之水</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/articles/Linux.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">Linux</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-12-15 00:00" pubdate>
+          December 15, 2021 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.3k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          28 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux</h1>
+            
+            <div class="markdown-body">
+              
+              <h1 id="linux"><a class="markdownIt-Anchor" href="#linux"></a> Linux</h1>
+<h2 id="1-linux安装"><a class="markdownIt-Anchor" href="#1-linux安装"></a> 1 Linux安装</h2>
+<p>这里以Linux发行版Ubuntu 20.04.2.0 LTS为例，介绍安装过程。LTS即Long Term Support，长时间支持版本，一般是三年。Ubuntu定期并有计划的不断发布其新版本，一直坚持每6个月发布一个新的版本。并致力于在该发行版的支持期内持续的发布安全和关键补丁。Ubuntu将为每个版本提供至少18个月的支持。</p>
+<h3 id="11-下载ubuntu安装镜像"><a class="markdownIt-Anchor" href="#11-下载ubuntu安装镜像"></a> 1.1 下载Ubuntu安装镜像</h3>
+<p>Ubuntu 20.04 ISO文件<a target="_blank" rel="noopener" href="https://ubuntu.com/download/desktop/">Ubuntu官网</a>，进入页面后点击右边的Download按钮开始下载。</p>
+<h3 id="12-制作u盘启动盘"><a class="markdownIt-Anchor" href="#12-制作u盘启动盘"></a> 1.2 制作U盘启动盘</h3>
+<p>使用容量在4GB或以上的U盘，USB3.0以上最佳，启动盘制作工具使用<a target="_blank" rel="noopener" href="https://rufus.ie/zh/">Rufus</a>。</p>
+<div style="text-align: center">
+<img style="margin: 5px 5px; border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);"
+src="Rufus-Ubuntu.png" srcset="/img/loading.gif" lazyload alt="Rufus界面" title="Rufus界面" width="40%">
+</div>
+<p>如上图所示，在Rufus中，选择我们下载好的ISO镜像文件，分区类型和安装模式选择GPT+UEFI，文件系统使用NTFS，默认簇大小即可。</p>
+<p>点击开始，ISO写入过程大概会持续几分钟，至此，启动盘制作完成！</p>
+<h3 id="13-设置启动项"><a class="markdownIt-Anchor" href="#13-设置启动项"></a> 1.3 设置启动项</h3>
+<ul>
+<li>
+<p>进入BIOS<br />
+关闭你要安装 Ubuntu 20.04 LTS的目标主机/服务器，然后插入启动盘，接着开机，在开机画面出来时使用快捷键(不同的电脑，一键进入的快捷键可能不一样，常见的快捷键为<strong>ESC</strong>，<strong>F12</strong>，<strong>F8</strong>)，</p>
+</li>
+<li>
+<p>修改启动顺序<br />
+进入BIOS后选择BOOT选项，将U盘启动盘设置优先启动项，保存并重启。</p>
+</li>
+</ul>
+<h3 id="14-安装过程"><a class="markdownIt-Anchor" href="#14-安装过程"></a> 1.4 安装过程</h3>
+<ul>
+<li>GNU GRUB界面<br />
+进入GRUB界面(黑色)后，我们选择<strong>ubuntu</strong>，该选项安装的Ubuntu图形界面分辨率正常。</li>
+<li>Try or Install<br />
+这一步可以选择安装语言，默认为English(推荐)，选择<strong>Install Ubuntu</strong>而非Try Ubuntu。</li>
+<li>语言选择<br />
+默认**English(US)**即可。</li>
+<li>更新选项<br />
+该界面选择**正常安装(Normal Install)**而非最小安装，其他选项中去掉勾选下载更新和第三方软件下载，由于不确定网络的稳定性，这两个选项勾选可能会严重影响安装速度。</li>
+<li>安装类型<br />
+这一步选择清除整个磁盘并安装Ubuntu。</li>
+<li>选择时区<br />
+选择东八区(Shanghai)。</li>
+<li>创建用户名和密码</li>
+<li>选择要安装的硬盘，这里系统盘为一块480G的固态硬盘。</li>
+<li>等待安装完成，系统安装完毕会自动重启。</li>
+</ul>
+<h3 id="15-常见问题"><a class="markdownIt-Anchor" href="#15-常见问题"></a> 1.5 常见问题</h3>
+<h4 id="系统安装完毕重启后显示器黑屏"><a class="markdownIt-Anchor" href="#系统安装完毕重启后显示器黑屏"></a> 系统安装完毕，重启后显示器黑屏</h4>
+<p>该现象是由于服务器CPU无集成显卡，需要安装GPU驱动才能驱动显示器。<br />
+具体步骤如下：</p>
+<ul>
+<li>
+<p>进入tty终端模式<br />
+由于暂时没有图形界面，我们尝试**[Ctrl]+Alt+Fn**进入tty终端(Fn通常是F1-F6).</p>
+</li>
+<li>
+<p>安装NVIDIA Driver<br />
+根据显卡型号选择对应的显卡驱动版本，对于RT3090显卡，我们选择最新的nvidia-driver-460版本。安装命令如下：</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt install nvidia-driver-460</code></pre></div>
+<p>安装完毕后重启服务器即可。</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo reboot</code></pre></div>
+<p>重启后我们可以进入图形界面，此时在终端输入<code>nvidia-smi</code>可以查看显卡状态和驱动版本。</p>
+  <div style="text-align: center">
+  <img style="margin: 5px 5px; border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);"
+  src="nvidia-smi.png" srcset="/img/loading.gif" lazyload alt="nvidia-smi查看显卡状态及驱动版本" width="60%">
+  </div>
+</li>
+</ul>
+<h2 id="2-环境配置"><a class="markdownIt-Anchor" href="#2-环境配置"></a> 2. 环境配置</h2>
+<h3 id="21-cuda-toolkit安装"><a class="markdownIt-Anchor" href="#21-cuda-toolkit安装"></a> 2.1. CUDA Toolkit安装</h3>
+<p>根据显卡型号选择合适的CUDA版本，具体参考<a target="_blank" rel="noopener" href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">CUDA Toolkit Documentation</a>，从<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA Toolkit Archive</a>进入版本选择页面，这里我们选择<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-11.2.1-download-archive">CUDA11.2.1</a>。根据操作系统和架构等选择如下：</p>
+<div style="text-align: center">
+<img style="margin: 5px 5px; border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);"
+src="CUDA-Download.png" srcset="/img/loading.gif" lazyload alt="CUDA版本选择界面" width="70%">
+</div>
+<p>选择完毕后会获得安装包下载和安装命令</p>
+<div class="code-wrapper"><pre><code class="hljs bash">wget https://developer.download.nvidia.com/compute/cuda/11.2.1/local_installers/cuda_11.2.1_460.32.03_linux.run
+sudo sh cuda_11.2.1_460.32.03_linux.run</code></pre></div>
+<p>传统上，安装 NVIDIA Driver和CUDA Toolkit的步骤是分开的，但实际上我们可以直接安装 CUDA Toolkit，系统将自动安装与其版本匹配的NVIDIA Driver。NVIDIA将CUDA与NVIDIA Driver集成在一起发布了CUDA Toolkit安装包，例如这里的<code>cuda_11.2.1_460.32.03_linux.run</code>就是将CUDA11.2.1与nvidia-driver-460.32.03集成的安装包。</p>
+<p>由于我们之前已经安装了NVIDIA Driver，因此在安装CUDA Toolkit时可以选择不再安装集成的NVIDIA Driver。同时我们可以注意到，在使用<code>nvidia-smi</code>命令时可以查看到NVIDIA Driver和CUDA版本号，此处的CUDA是驱动API(Driver Version)，是依赖NVIDIA Driver的。我们在实际运行程序时使用的是接下来要安装的CUDA Toolkit中的CUDA，即运行API(Runtime Version)。感兴趣可以自行了解，通常只需保证驱动API版本&gt;=运行API版本即可。</p>
+<p>下面我们讲述安装 CUDA Toolkit 的方法。</p>
+<ul>
+<li>
+<p>根据上面提示的命令，下载CUDA Toolkit安装包</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">wget https://developer.download.nvidia.com/compute/cuda/11.2.1/local_installers/cuda_11.2.1_460.32.03_linux.run</code></pre></div>
+<p>如果下载速度过慢，可以自行粘贴网址到浏览器下载，实在不行可考虑科学上网。</p>
+</li>
+<li>
+<p>运行安装命令</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo sh cuda_11.2.1_460.32.03_linux.run</code></pre></div>
+<p>等待一段时间后进入安装界面</p>
+  <div style="text-align: center">
+  <img style="margin: 5px 5px; border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);"
+  src="CUDA-step1.png" srcset="/img/loading.gif" lazyload alt="CUDA安装过程" width="60%">
+  </div>
+<p>这一步提示我们已经安装过NVIDIA Driver，我们选择<code>continue</code></p>
+</li>
+<li>
+<p>接受协议</p>
+  <div style="text-align: center">
+  <img style="margin: 5px 5px; border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);"
+  src="CUDA-step2.png" srcset="/img/loading.gif" lazyload alt="CUDA安装过程" width="60%">
+  </div>
+<p>输入<code>accept</code>接受许可和协议。</p>
+</li>
+<li>
+<p>集成选择界面</p>
+  <div style="text-align: center">
+  <img style="margin: 5px 5px; border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);"
+  src="CUDA-Download.png" srcset="/img/loading.gif" lazyload alt="CUDA版本选择界面" width="70%">
+  </div>
+<p>这一步我们去勾选NVIDIA Driver，然后执行安装即可。</p>
+</li>
+<li>
+<p>环境变量配置<br />
+安装程序执行完毕后，屏幕上会提示设置环境变量，此处我们根据提示设置环境变量。<br />
+打开环境变量文件<code>.bashrc</code></p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo vim ~.bashrc</code></pre></div>
+<p>在文件末尾添加如下两行(根据屏幕提示修改为你的版本)：</p>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/usr/local/cuda-11.2/bin
+<span class="hljs-built_in">export</span> LD_LIBRARY_PATH=<span class="hljs-variable">$LD_LIBRARY_PATH</span>:/usr/local/cuda-11.2/lib64</code></pre></div>
+<p>执行<code>.bashrc</code>文件</p>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~.bashrc</code></pre></div>
+</li>
+<li>
+<p>测试CUDA安装</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">nvcc -V</code></pre></div>
+<p>此时可以查看CUDA运行API版本如下：</p>
+  <div style="text-align: center">
+  <img style="margin: 5px 5px; border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);"
+  src="nvcc.png" srcset="/img/loading.gif" lazyload alt="查看CUDA运行API版本" width="40%">
+  </div>
+</li>
+</ul>
+<h3 id="22-cudnn安装"><a class="markdownIt-Anchor" href="#22-cudnn安装"></a> 2.2 cuDNN安装</h3>
+<ul>
+<li>
+<p>官网下载安装包<br />
+在<a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN Archive</a>下载合适的安装包版本，例如cudnn-11.2-linux-x64-v8.1.1.33.tgz</p>
+</li>
+<li>
+<p>如果扩展名不是.tgz，则手动修改文件扩展名为.tgz</p>
+</li>
+<li>
+<p>解压cudnn-11.2-linux-x64-v8.1.1.33.tgz<br />
+解压后得到cuda文件夹，内含include，lib64文件夹</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">tar -zxvf cudnn-11.3-linux-x64-v8.2.0.53.tgz</code></pre></div>
+</li>
+<li>
+<p>替换cuda文件</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo <span class="hljs-built_in">cp</span> cuda/include/cudnn.h /usr/local/cuda/include
+sudo <span class="hljs-built_in">cp</span> cuda/lib64/libcudnn* /usr/local/cuda/lib64</code></pre></div>
+</li>
+<li>
+<p>更改文件权限(这里<code>cudnn*.h</code>很关键，网上教程全错)</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo <span class="hljs-built_in">chmod</span> a+r /usr/local/cuda/include/cudnn*.h 
+sudo <span class="hljs-built_in">chmod</span> a+r /usr/local/cuda/lib64/libcudnn*</code></pre></div>
+</li>
+<li>
+<p>更新软连接</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo <span class="hljs-built_in">ln</span> -sf libcudnn.so.8.1.1 libcudnn.so.8 
+sudo <span class="hljs-built_in">ln</span> -sf libcudnn.so.8 libcudnn.so  
+sudo ldconfig</code></pre></div>
+</li>
+<li>
+<p>查看cuDNN版本</p>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2</code></pre></div>
+</li>
+</ul>
+<h3 id="23-ssh服务配置"><a class="markdownIt-Anchor" href="#23-ssh服务配置"></a> 2.3 ssh服务配置</h3>
+<ul>
+<li>
+<p>安装openssh-server</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt install openssh-server</code></pre></div>
+</li>
+<li>
+<p>开启ssh服务</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo service sshd start</code></pre></div>
+</li>
+<li>
+<p>查看ssh服务状态</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo service sshd status</code></pre></div>
+</li>
+<li>
+<p>安装完即可使用ssh服务工具(如mobaXterm)在局域网内使用内网IP地址和22端口访问服务器。</p>
+</li>
+</ul>
+<!-- ### 2.4 公网访问服务器配置(顺德)
+- 查看本地服务器校内局域网IP
+    <div class="code-wrapper"><pre><code class="hljs bash">ifconfig</code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs">此处我们可以获得IP地址`10.31.14.76`，联系信息化管理老师邓海锋，将IP地址发给他，他会将该IP与MAC绑定，之后我们将IP获取方式修改为静态IP，静态IP配置如下(示例)：
+
+| IP   | Mask | Gateway | DNS  | DNS  |
+| ---- | ---- | ------- | ---- | ---- |
+| 10.31.14.76 | 255.255.255.0 | 10.31.14.254 | 120.80.88.88 | 221.5.88.88 |
+</code></pre></div>
+<ul>
+<li>公网IP映射<br />
+同样联系邓老师，将该局域网IP地址<code>10.31.14.76</code>映射到公网，他会给我们返回公网IP和端口，例如此处为<code>183.237.172.243:14226</code>。 --&gt;</li>
+</ul>
+<h2 id="3-硬盘挂载"><a class="markdownIt-Anchor" href="#3-硬盘挂载"></a> 3 硬盘挂载</h2>
+<ul>
+<li>
+<p>查看所有磁盘分区</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo fdisk -l</code></pre></div>
+  <div style="text-align: center">
+  <img style="margin: 5px 5px; border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);"
+  src="fdisk.png" srcset="/img/loading.gif" lazyload alt="主要硬盘分区" width="50%">
+  </div>
+</li>
+<li>
+<p>创建文件夹</p>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /
+sudo <span class="hljs-built_in">mkdir</span> data
+sudo <span class="hljs-built_in">mkdir</span> data1
+sudo <span class="hljs-built_in">mkdir</span> dataset</code></pre></div>
+</li>
+<li>
+<p>切换到root用户</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">su</code></pre></div>
+</li>
+<li>
+<p>密码不正确可尝试修改root密码</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo passwd root</code></pre></div>
+</li>
+<li>
+<p>挂载硬盘</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">mount /dev/sda /data
+mount /dev/sdb /data1
+mount /dev/sdc /dataset</code></pre></div>
+</li>
+<li>
+<p>切换回lab1119用户</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">su lab1119</code></pre></div>
+</li>
+<li>
+<p>修改<code>/etc/fstab</code>文件,该文件负责配置Linux开机时自动挂载的分区。</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo vim /etc/fstab</code></pre></div>
+</li>
+<li>
+<p>写入以下内容</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">/dev/sda   /data   ext4  defaults   0   1
+/dev/sdb   /data1  ext4  defaults   0   1
+/dev/sdc   /dataset ext4 defaults   0   1</code></pre></div>
+</li>
+</ul>
+<h2 id="4-权限配置"><a class="markdownIt-Anchor" href="#4-权限配置"></a> 4 权限配置</h2>
+<ul>
+<li>
+<p>创建用户组student</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo groupadd student</code></pre></div>
+</li>
+<li>
+<p>创建用户并添加到用户组，同时在<code>/data</code>目录下为该用户创建文件夹</p>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># user_add.sh</span>
+<span class="hljs-keyword">for</span> user <span class="hljs-keyword">in</span>  <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+<span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">if</span>  useradd -g student -m  -s /bin/bash <span class="hljs-variable">$user</span>
+    <span class="hljs-keyword">then</span> 
+            <span class="hljs-built_in">echo</span> please input the password of <span class="hljs-variable">$user</span>: 
+        passwd <span class="hljs-variable">$user</span>
+            <span class="hljs-built_in">echo</span> the <span class="hljs-variable">$user</span> is successfully created
+        <span class="hljs-built_in">cd</span> /data/
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$user</span>
+        <span class="hljs-keyword">then</span> 
+            <span class="hljs-built_in">echo</span> the folder  /data/<span class="hljs-variable">$user</span> is created
+            <span class="hljs-built_in">chown</span> <span class="hljs-variable">$user</span> -R <span class="hljs-variable">$user</span>
+            <span class="hljs-built_in">chgrp</span> student -R <span class="hljs-variable">$user</span>
+            <span class="hljs-built_in">echo</span> the <span class="hljs-variable">$user</span> is successfully changed to <span class="hljs-variable">$user</span>
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-built_in">echo</span> the folder /data/<span class="hljs-variable">$user</span> have been existed !
+        <span class="hljs-keyword">fi</span>
+    <span class="hljs-keyword">fi</span>
+<span class="hljs-keyword">done</span></code></pre></div>
+</li>
+<li>
+<p>若是挂载了先前已经使用过的硬盘，历史文件的用户和用户组为UID，在创建用户的同时修改文件夹权限</p>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># change_user.sh</span>
+<span class="hljs-keyword">for</span> user <span class="hljs-keyword">in</span>  <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+<span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">if</span>  useradd -g student -m  -s /bin/bash <span class="hljs-variable">$user</span>
+    <span class="hljs-keyword">then</span> 
+        <span class="hljs-built_in">echo</span> please input the password of <span class="hljs-variable">$user</span>: 
+            passwd <span class="hljs-variable">$user</span>
+        <span class="hljs-built_in">echo</span> the <span class="hljs-variable">$user</span> is successfully created
+        <span class="hljs-built_in">cd</span> /data/
+        <span class="hljs-built_in">echo</span> the folder  /data/<span class="hljs-variable">$user</span> is created
+        <span class="hljs-built_in">chown</span> <span class="hljs-variable">$user</span> -R <span class="hljs-variable">$user</span>
+        <span class="hljs-built_in">chgrp</span> student -R <span class="hljs-variable">$user</span>
+        <span class="hljs-built_in">echo</span> the <span class="hljs-variable">$user</span> is successfully changed to <span class="hljs-variable">$user</span>
+    <span class="hljs-keyword">fi</span>
+<span class="hljs-keyword">done</span></code></pre></div>
+</li>
+<li>
+<p>修改用户密码</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo passwd username</code></pre></div>
+</li>
+</ul>
+<h2 id="5-linux换源"><a class="markdownIt-Anchor" href="#5-linux换源"></a> 5 Linux换源</h2>
+<h3 id="51-linux源的作用"><a class="markdownIt-Anchor" href="#51-linux源的作用"></a> 5.1 Linux源的作用</h3>
+<p>文件<code>/etc/apt/sources.list</code>是一个普通可编辑的文本文件，保存了linux软件更新的源服务器的地址。和<code>sources.list</code>功能一样的是<code>/etc/apt/sources.list.d/*.list</code>(*代表一个文件名，只能由字母、数字、下划线、英文句号组成)。<code>sources.list.d</code>目录下的<code>*.list</code>文件为在单独文件中写入源的地址提供了一种方式，通常用来安装第三方的软件。</p>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to</span>
+<span class="hljs-comment"># newer versions of the distribution.</span>
+deb http://archive.ubuntu.com/ubuntu/ bionic main restricted
+<span class="hljs-comment"># deb-src http://archive.ubuntu.com/ubuntu/ bionic main restricted</span>
+
+<span class="hljs-comment">## Major bug fix updates produced after the final release of the</span>
+<span class="hljs-comment">## distribution.</span>
+deb http://archive.ubuntu.com/ubuntu/ bionic-updates main restricted
+<span class="hljs-comment"># deb-src http://archive.ubuntu.com/ubuntu/ bionic-updates main restricted</span>
+
+<span class="hljs-comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</span>
+<span class="hljs-comment">## team. Also, please note that software in universe WILL NOT receive any</span>
+<span class="hljs-comment">## review or updates from the Ubuntu security team.</span>
+deb http://archive.ubuntu.com/ubuntu/ bionic universe
+<span class="hljs-comment"># deb-src http://archive.ubuntu.com/ubuntu/ bionic universe</span>
+deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe
+<span class="hljs-comment"># deb-src http://archive.ubuntu.com/ubuntu/ bionic-updates universe</span>
+
+<span class="hljs-comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</span>
+<span class="hljs-comment">## team, and may not be under a free licence. Please satisfy yourself as to</span>
+<span class="hljs-comment">## your rights to use the software. Also, please note that software in</span>
+<span class="hljs-comment">## multiverse WILL NOT receive any review or updates from the Ubuntu</span>
+<span class="hljs-comment">## security team.</span>
+deb http://archive.ubuntu.com/ubuntu/ bionic multiverse
+<span class="hljs-comment"># deb-src http://archive.ubuntu.com/ubuntu/ bionic multiverse</span>
+deb http://archive.ubuntu.com/ubuntu/ bionic-updates multiverse
+<span class="hljs-comment"># deb-src http://archive.ubuntu.com/ubuntu/ bionic-updates multiverse</span>
+
+<span class="hljs-comment">## N.B. software from this repository may not have been tested as</span>
+<span class="hljs-comment">## extensively as that contained in the main release, although it includes</span>
+<span class="hljs-comment">## newer versions of some applications which may provide useful features.</span>
+<span class="hljs-comment">## Also, please note that software in backports WILL NOT receive any review</span>
+<span class="hljs-comment">## or updates from the Ubuntu security team.</span>
+deb http://archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse
+<span class="hljs-comment"># deb-src http://archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse</span>
+
+<span class="hljs-comment">## Uncomment the following two lines to add software from Canonical&#x27;s</span>
+<span class="hljs-comment">## &#x27;partner&#x27; repository.</span>
+<span class="hljs-comment">## This software is not part of Ubuntu, but is offered by Canonical and the</span>
+<span class="hljs-comment">## respective vendors as a service to Ubuntu users.</span>
+<span class="hljs-comment"># deb http://archive.canonical.com/ubuntu bionic partner</span>
+<span class="hljs-comment"># deb-src http://archive.canonical.com/ubuntu bionic partner</span>
+
+deb http://security.ubuntu.com/ubuntu/ bionic-security main restricted
+<span class="hljs-comment"># deb-src http://security.ubuntu.com/ubuntu/ bionic-security main restricted</span>
+deb http://security.ubuntu.com/ubuntu/ bionic-security universe
+<span class="hljs-comment"># deb-src http://security.ubuntu.com/ubuntu/ bionic-security universe</span>
+deb http://security.ubuntu.com/ubuntu/ bionic-security multiverse
+<span class="hljs-comment"># deb-src http://security.ubuntu.com/ubuntu/ bionic-security multiverse</span></code></pre></div>
+<p>如上是ubuntu官方<code>sources.list</code>文件内容，具体地含义如下：<br />
+每一行的开头是deb或者deb-src，分别表示直接<strong>通过.deb文件进行安装</strong>和<strong>通过源文件的方式进行安装</strong>。deb或者deb-src字段之后，是一段URL，之后是五个用空格隔开的字符串，分别对应相应的目录结构。在浏览器中输入http://archive.ubuntu.com/ubuntu/，并进入dists目录，可以发现有5个目录和前述sources.list文件中的第三列字段相对应。任选其中一个目录进入，可以看到和sources.list后四列相对应的目录结构。</p>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment">#deb cdrom:[Ubuntu 20.04.1 LTS _Focal Fossa_ - Release amd64 (20200731)]/ focal main restricted</span>
+
+<span class="hljs-comment"># See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to</span>
+<span class="hljs-comment"># newer versions of the distribution.</span>
+deb http://cn.archive.ubuntu.com/ubuntu/ focal main restricted
+<span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal main restricted</span>
+
+<span class="hljs-comment">## Major bug fix updates produced after the final release of the</span>
+<span class="hljs-comment">## distribution.</span>
+deb http://cn.archive.ubuntu.com/ubuntu/ focal-updates main restricted
+<span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal-updates main restricted</span>
+
+<span class="hljs-comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</span>
+<span class="hljs-comment">## team. Also, please note that software in universe WILL NOT receive any</span>
+<span class="hljs-comment">## review or updates from the Ubuntu security team.</span>
+deb http://cn.archive.ubuntu.com/ubuntu/ focal universe
+<span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal universe</span>
+deb http://cn.archive.ubuntu.com/ubuntu/ focal-updates universe
+<span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal-updates universe</span>
+
+<span class="hljs-comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</span>
+<span class="hljs-comment">## team, and may not be under a free licence. Please satisfy yourself as to</span>
+<span class="hljs-comment">## your rights to use the software. Also, please note that software in</span>
+<span class="hljs-comment">## multiverse WILL NOT receive any review or updates from the Ubuntu</span>
+<span class="hljs-comment">## security team.</span>
+deb http://cn.archive.ubuntu.com/ubuntu/ focal multiverse
+<span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal multiverse</span>
+deb http://cn.archive.ubuntu.com/ubuntu/ focal-updates multiverse
+<span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal-updates multiverse</span>
+
+<span class="hljs-comment">## N.B. software from this repository may not have been tested as</span>
+<span class="hljs-comment">## extensively as that contained in the main release, although it includes</span>
+<span class="hljs-comment">## newer versions of some applications which may provide useful features.</span>
+<span class="hljs-comment">## Also, please note that software in backports WILL NOT receive any review</span>
+<span class="hljs-comment">## or updates from the Ubuntu security team.</span>
+deb http://cn.archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
+<span class="hljs-comment"># deb-src http://cn.archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse</span>
+
+<span class="hljs-comment">## Uncomment the following two lines to add software from Canonical&#x27;s</span>
+<span class="hljs-comment">## &#x27;partner&#x27; repository.</span>
+<span class="hljs-comment">## This software is not part of Ubuntu, but is offered by Canonical and the</span>
+<span class="hljs-comment">## respective vendors as a service to Ubuntu users.</span>
+<span class="hljs-comment"># deb http://archive.canonical.com/ubuntu focal partner</span>
+<span class="hljs-comment"># deb-src http://archive.canonical.com/ubuntu focal partner</span>
+
+deb http://security.ubuntu.com/ubuntu focal-security main restricted
+<span class="hljs-comment"># deb-src http://security.ubuntu.com/ubuntu focal-security main restricted</span>
+deb http://security.ubuntu.com/ubuntu focal-security universe
+<span class="hljs-comment"># deb-src http://security.ubuntu.com/ubuntu focal-security universe</span>
+deb http://security.ubuntu.com/ubuntu focal-security multiverse
+<span class="hljs-comment"># deb-src http://security.ubuntu.com/ubuntu focal-security multiverse</span>
+
+<span class="hljs-comment"># This system was installed using small removable media</span>
+<span class="hljs-comment"># (e.g. netinst, live or single CD). The matching &quot;deb cdrom&quot;</span>
+<span class="hljs-comment"># entries were disabled at the end of the installation process.</span>
+<span class="hljs-comment"># For information about how to configure apt package sources,</span>
+<span class="hljs-comment"># see the sources.list(5) manual.</span></code></pre></div>
+<p>如上是ubuntu官方中文的源文件，使用cn域名。</p>
+<h3 id="52-linux源的选择"><a class="markdownIt-Anchor" href="#52-linux源的选择"></a> 5.2 Linux源的选择</h3>
+<p>ubuntu官方有自身的软件源，直接从官方的软件源获取数据的速度比较慢(cn域名速度较快)。而通过国内的一些的源的镜像进行更新一般能够获得比官方源更快的速度，不过不同国内的源的下载速度也会不一样。这里给出了几个ubuntu软件源列表(基于Ubuntu20.04，其他版本请访问官方网站)，选取ubuntu软件源的方法是首先选择位于相同地区的源，然后进行ping操作，时延不高即可。</p>
+<ul>
+<li>
+<p><strong>清华源</strong><br />
+官方网站 <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/</a></p>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span>
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+<span class="hljs-comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span>
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+<span class="hljs-comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span>
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+<span class="hljs-comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span>
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+<span class="hljs-comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span></code></pre></div>
+</li>
+<li>
+<p><strong>阿里源</strong><br />
+官方网站 <a target="_blank" rel="noopener" href="https://developer.aliyun.com/special/mirrors/notice?spm=5176.10695662.1173276.1.482c6b7biYku0x">https://developer.aliyun.com/special/mirrors/notice?spm=5176.10695662.1173276.1.482c6b7biYku0x</a></p>
+  <div class="code-wrapper"><pre><code class="hljs bash">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</code></pre></div>
+</li>
+<li>
+<p><strong>中科大源</strong><br />
+官方网站 <a target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/help/ubuntu.html">http://mirrors.ustc.edu.cn/help/ubuntu.html</a></p>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 默认注释了源码仓库，如有需要可自行取消注释</span>
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+<span class="hljs-comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span>
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+<span class="hljs-comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span>
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+<span class="hljs-comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span>
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+<span class="hljs-comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span></code></pre></div>
+</li>
+<li>
+<p><strong>网易源</strong><br />
+官方网站 <a target="_blank" rel="noopener" href="https://mirrors.163.com/.help/ubuntu.html">https://mirrors.163.com/.help/ubuntu.html</a></p>
+  <div class="code-wrapper"><pre><code class="hljs bash">deb http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse</code></pre></div>
+</li>
+</ul>
+<h3 id="53-linux换源方法"><a class="markdownIt-Anchor" href="#53-linux换源方法"></a> 5.3 Linux换源方法</h3>
+<p>换源就是更换文件Linux<code>/etc/apt/sources.list</code>中的地址，具体步骤如下。</p>
+<ul>
+<li>
+<p>备份默认<code>sources.list</code>文件</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo <span class="hljs-built_in">cp</span> /etc/apt/sources.list /etc/apt/sources_default.list</code></pre></div>
+</li>
+<li>
+<p>编辑<code>sources.list</code>文件</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo vim /etc/apt/sources.list</code></pre></div>
+</li>
+<li>
+<p>删除原来的默认源，在上面的第三方源中选择一个合适的，写入<code>sources.list</code>文件</p>
+</li>
+<li>
+<p>更新源</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">sudo apt update</code></pre></div>
+</li>
+</ul>
+<h2 id="6-bashrc文件"><a class="markdownIt-Anchor" href="#6-bashrc文件"></a> 6 bashrc文件</h2>
+<p>bash在每次启动时都会加载<code>.bashrc</code>文件的内容。每个用户的 home 目录都有这个shell脚本，它用来存储并加载你的终端配置和环境变量。终端配置可以包含很多不同的东西，例如别名、函数等。</p>
+<h3 id="61-几个文件的区分"><a class="markdownIt-Anchor" href="#61-几个文件的区分"></a> 6.1 几个文件的区分</h3>
+<h4 id="611-etcprofile文件"><a class="markdownIt-Anchor" href="#611-etcprofile文件"></a> 6.1.1 /etc/profile文件</h4>
+<ul>
+<li>
+<p>作用<br />
+用来设置系统环境参数，比如<code>$PATH</code>。 这里面的环境变量是对系统内所有用户生效的。</p>
+</li>
+<li>
+<p>方法</p>
+<ul>
+<li>编辑器打开文件输<code>export</code>语句</li>
+</ul>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> SCONS_PATH=/jsoncpp/scons-3.1.1</code></pre></div>
+<ul>
+<li>执行如下指令使得配置生效</li>
+</ul>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> /etc/profile</code></pre></div>
+<ul>
+<li>执行如下指令验证配置对当前终端是否生效</li>
+</ul>
+  <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$SCONS_PATH</span></code></pre></div>
+</li>
+</ul>
+<h4 id="612-~profile文件"><a class="markdownIt-Anchor" href="#612-~profile文件"></a> 6.1.2 ~/.profile文件</h4>
+<p>用来设置一些环境变量，功能和<code>/etc/profile</code>类似，但是这个是针对用户来设定的，也就是说如果你在/home/user1/.bash_profile中设定了环境变量，那么这个环境变量只针对 user1 这个用户生效。</p>
+<h4 id="613-etcbashrc文件"><a class="markdownIt-Anchor" href="#613-etcbashrc文件"></a> 6.1.3 /etc/bashrc文件</h4>
+<p><code>/etc/bashrc</code>文件(或者`/etc/bash.bashrc)设置系统bash shell相关的东西，对系统内所有用户生效。只要用户运行bash命令，那么这里面的东西就在起作用，也就是说可以认为设置完即生效。</p>
+<h4 id="614-~bashrc文件"><a class="markdownIt-Anchor" href="#614-~bashrc文件"></a> 6.1.4 ~/.bashrc文件</h4>
+<p>作用类似于/etc/bashrc，用于设置alias别名、全局变量之类的。只是针对用户自己而言，不对其他用户生效。</p>
+<h3 id="62-编辑bashrc文件"><a class="markdownIt-Anchor" href="#62-编辑bashrc文件"></a> 6.2 编辑bashrc文件</h3>
+<p><code>bashrc</code>文件位于<code>/etc</code>目录或用户的home目录下，根据前文所说，针对所有用户或单独用户选择不同的文件，使用常用的编辑器例如<code>vim</code>即可编辑。</p>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span>
+sudo vim .bashrc</code></pre></div>
+<p><code>/etc/bashrc</code>文件配置完成即可生效，<code>~/.bashrc</code>文件需source激活。</p>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> .bashrc</code></pre></div>
+<h3 id="63-终端配置"><a class="markdownIt-Anchor" href="#63-终端配置"></a> 6.3 终端配置</h3>
+<h4 id="631-别名"><a class="markdownIt-Anchor" href="#631-别名"></a> 6.3.1 别名</h4>
+<p>别名允许你使用简写的代码来执行你想要的某种格式的某个命令。用<code>ls</code>命令来举个例子，<code>ls</code>命令默认显示你目录里的内容，不过显示目录的更多信息，或者显示目录下的隐藏内容，需要添加其他参数。因此，有个常见的别名就是<code>ll</code>，用来运行<code>ls -lha</code> 或者其他类似的命令。这样就能显示文件的大部分信息，找出隐藏的文件等。你需要按照下面这样的格式书写别名：</p>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">alias</span> ll=<span class="hljs-string">&#x27;ls -alF&#x27;</span>
+<span class="hljs-built_in">alias</span> la=<span class="hljs-string">&#x27;ls -A&#x27;</span>
+<span class="hljs-built_in">alias</span> l=<span class="hljs-string">&#x27;ls -CF&#x27;</span></code></pre></div>
+<p>再例如，如果我们想快速激活或退出已经创建好的 conda 环境，也可以为这些指令赋予别名。</p>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">alias</span> py36=<span class="hljs-string">&#x27;source /data1/yuhong/Tools/Conda/bin/activate; conda activate py36&#x27;</span>
+<span class="hljs-built_in">alias</span> de36=<span class="hljs-string">&#x27;source deactivate; conda deactivate&#x27;</span></code></pre></div>
+<h4 id="632-函数"><a class="markdownIt-Anchor" href="#632-函数"></a> 6.3.2 函数</h4>
+<p>除了缩短命令名，你也可以用bash函数组合多个命令到一个操作。这些命令可以很复杂，但是它们大多遵循这种语法：</p>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-function"><span class="hljs-title">function_name</span></span> () &#123;
+command_1
+command_2
+&#125;</code></pre></div>
+<p>下面的命令组合了<code>mkdir</code>和<code>cd</code>命令。输入<code>md folder_name</code>可以在你的工作目录创建一个名为folder_name的目录并立刻进入。</p>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-function"><span class="hljs-title">md</span></span> () &#123;
+<span class="hljs-built_in">mkdir</span> -p <span class="hljs-variable">$1</span>
+<span class="hljs-built_in">cd</span> <span class="hljs-variable">$1</span>
+&#125;</code></pre></div>
+<p>函数中的<code>$1</code>代表第一个参数，就是你在函数名后紧跟着输入的文本。</p>
+<h3 id="64-环境变量"><a class="markdownIt-Anchor" href="#64-环境变量"></a> 6.4 环境变量</h3>
+<p>还可以在bashrc文件中使用<code>export</code>命令写入环境变量，例如以下是安装Cuda后的环境变量设置。</p>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/usr/local/cuda-11.2/bin
+<span class="hljs-built_in">export</span> LD_LIBRARY_PATH=<span class="hljs-variable">$LD_LIBRARY_PATH</span>:/usr/local/cuda-11.2/lib64</code></pre></div>
+<h2 id="vivim"><a class="markdownIt-Anchor" href="#vivim"></a> vi/vim</h2>
+<h3 id="什么是vim"><a class="markdownIt-Anchor" href="#什么是vim"></a> 什么是vim</h3>
+<p>所有的Unix Like系统都会内建vi文书编辑器，其他的文书编辑器则不一定会存在。但是目前我们使用比较多的是vim编辑器。vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计。</p>
+<p>Vim是从vi发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说，vi是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。vim则可以说是程序开发者的一项很好用的工具。连<a target="_blank" rel="noopener" href="http://www.vim.org">vim官方网站</a>自己也说vim是一个程序开发工具而不是文字处理软件。</p>
+<h3 id="安装方式"><a class="markdownIt-Anchor" href="#安装方式"></a> 安装方式</h3>
+<div class="code-wrapper"><pre><code class="hljs bash">sudo apt install vim</code></pre></div>
+<h3 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法"></a> 使用方法</h3>
+<p>基本上vi/vim共分为三种模式，分别是命令模式(Command mode)，输入模式(Insert mode)和底线命令模式(Last line mode)，下面分别介绍三种模式。</p>
+<h4 id="命令模式"><a class="markdownIt-Anchor" href="#命令模式"></a> 命令模式</h4>
+<p>用户刚刚启动 vi/vim，便进入了命令模式。此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。以下是常用的几个命令：</p>
+<ul>
+<li><strong>i</strong> 切换到输入模式，以输入字符。</li>
+<li><strong>x</strong> 删除当前光标所在处的字符。</li>
+<li><strong>:</strong> 切换到底线命令模式，以在最底一行输入命令。</li>
+<li><strong>/</strong> 查找字符</li>
+</ul>
+<p>若想要编辑文本，先启动vim，进入了命令模式，按下i，切换到输入模式。命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</p>
+<h4 id="输入模式"><a class="markdownIt-Anchor" href="#输入模式"></a> 输入模式</h4>
+<p>在命令模式下按下i就进入了输入模式。在输入模式中，可以使用以下按键：</p>
+<ul>
+<li>字符按键以及Shift组合，输入字符</li>
+<li>ENTER，回车键，换行</li>
+<li>BACK SPACE，退格键，删除光标前一个字符</li>
+<li>DEL，删除键，删除光标后一个字符</li>
+<li>方向键，在文本中移动光标</li>
+<li>HOME/END，移动光标到行首/行尾</li>
+<li>Page Up/Page Down，上/下翻页</li>
+<li>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线</li>
+<li>ESC，退出输入模式，切换到命令模式</li>
+</ul>
+<h4 id="底线命令模式"><a class="markdownIt-Anchor" href="#底线命令模式"></a> 底线命令模式</h4>
+<p>在命令模式下按下:(英文冒号)就进入了底线命令模式。底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。在底线命令模式中，基本的命令有(已经省略了冒号)：</p>
+<ul>
+<li>q 退出程序</li>
+<li>w 保存文件</li>
+<li>! 以上命令后添加!表示强制执行</li>
+<li>ESC 随时退出底线命令模式</li>
+</ul>
+<h3 id="vim按键说明"><a class="markdownIt-Anchor" href="#vim按键说明"></a> vim按键说明</h3>
+<h4 id="一般模式可用的光标移动-复制粘贴-搜索替换等"><a class="markdownIt-Anchor" href="#一般模式可用的光标移动-复制粘贴-搜索替换等"></a> 一般模式可用的光标移动、复制粘贴、搜索替换等</h4>
+<ul>
+<li>
+<p>移动光标</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">h 或 向左箭头键(←)</td>
+<td style="text-align:left">光标向左移动一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">j 或 向下箭头键(↓)</td>
+<td style="text-align:left">光标向下移动一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">k 或 向上箭头键(↑)</td>
+<td style="text-align:left">光标向上移动一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">l 或 向右箭头键(→)</td>
+<td style="text-align:left">光标向右移动一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl] + [f]</td>
+<td style="text-align:left">屏幕『向下』移动一页，相当于 [Page Down]按键 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl] + [b]</td>
+<td style="text-align:left">屏幕『向上』移动一页，相当于 [Page Up] 按键 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl] + [d]</td>
+<td style="text-align:left">屏幕『向下』移动半页</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl] + [u]</td>
+<td style="text-align:left">屏幕『向上』移动半页</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">光标移动到非空格符的下一行</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">光标移动到非空格符的上一行</td>
+</tr>
+<tr>
+<td style="text-align:left">n<space></td>
+<td style="text-align:left">n表示『数字』，例如 20 。按下数字后再按空格键，光标会向右移动这一行的 n 个字符。例如 20<space> 则光标会向后面移动 20 个字符距离。</td>
+</tr>
+<tr>
+<td style="text-align:left">0 或功能键[Home]</td>
+<td style="text-align:left">这是数字『 0 』：移动到这一行的最前面字符处 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">$ 或功能键[End]</td>
+<td style="text-align:left">移动到这一行的最后面字符处(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">H</td>
+<td style="text-align:left">光标移动到这个屏幕的最上方那一行的第一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">M</td>
+<td style="text-align:left">光标移动到这个屏幕的中央那一行的第一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">L</td>
+<td style="text-align:left">光标移动到这个屏幕的最下方那一行的第一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">G</td>
+<td style="text-align:left">移动到这个档案的最后一行(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">nG</td>
+<td style="text-align:left">n为数字。移动到这个档案的第n行。例如 20G 则会移动到这个档案的第 20 行(可配合 :set nu)</td>
+</tr>
+<tr>
+<td style="text-align:left">gg</td>
+<td style="text-align:left">移动到这个档案的第一行，相当于1G啊！ (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">n<Enter></td>
+<td style="text-align:left">n为数字。光标向下移动n行(常用)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>搜索替换</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">/word</td>
+<td style="text-align:left">向光标之下寻找一个名称为 word 的字符串。例如要在档案内搜寻 vbird 这个字符串，就输入 /vbird 即可！ (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">?word</td>
+<td style="text-align:left">向光标之上寻找一个字符串名称为 word 的字符串。</td>
+</tr>
+<tr>
+<td style="text-align:left">n</td>
+<td style="text-align:left">这个 n 是英文按键。代表重复前一个搜寻的动作。举例来说， 如果刚刚我们执行 /vbird 去向下搜寻 vbird 这个字符串，则按下 n 后，会向下继续搜寻下一个名称为 vbird 的字符串。如果是执行 ?vbird 的话，那么按下 n 则会向上继续搜寻名称为 vbird 的字符串！</td>
+</tr>
+<tr>
+<td style="text-align:left">N</td>
+<td style="text-align:left">这个 N 是英文按键。与 n 刚好相反，为『反向』进行前一个搜寻动作。 例如 /vbird 后，按下 N 则表示『向上』搜寻 vbird 。</td>
+</tr>
+<tr>
+<td style="text-align:left">:n1,n2s/word1/word2/g</td>
+<td style="text-align:left">n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代为 word2 ！举例来说，在 100 到 200 行之间搜寻 vbird 并取代为 VBIRD 则：『:100,200s/vbird/VBIRD/g』。(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">:1,$s/word1/word2/g 或 :%s/word1/word2/g</td>
+<td style="text-align:left">从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">:1,$s/word1/word2/gc 或 :%s/word1/word2/gc</td>
+<td style="text-align:left">从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！且在取代前显示提示字符给用户确认 (confirm) 是否需要取代！(常用)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>删除、复制与贴上</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x, X</td>
+<td style="text-align:left">在一行字当中，x 为向后删除一个字符 (相当于 [del] 按键)， X 为向前删除一个字符(相当于 [backspace] 亦即是退格键) (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">nx</td>
+<td style="text-align:left">n 为数字，连续向后删除 n 个字符。举例来说，我要连续删除 10 个字符， 『10x』。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>dd</strong></td>
+<td style="text-align:left">删除游标所在的那一整行(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">ndd</td>
+<td style="text-align:left">n 为数字。删除光标所在的向下 n 行，例如 20dd 则是删除 20 行 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">d1G</td>
+<td style="text-align:left">删除光标所在到第一行的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:left">dG</td>
+<td style="text-align:left">删除光标所在到最后一行的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:left">d$</td>
+<td style="text-align:left">删除游标所在处，到该行的最后一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">d0</td>
+<td style="text-align:left">那个是数字的 0 ，删除游标所在处，到该行的最前面一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>yy</strong></td>
+<td style="text-align:left">复制游标所在的那一行(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">nyy</td>
+<td style="text-align:left">n 为数字。复制光标所在的向下 n 行，例如 20yy 则是复制 20 行(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">y1G</td>
+<td style="text-align:left">复制游标所在行到第一行的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:left">yG</td>
+<td style="text-align:left">复制游标所在行到最后一行的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:left">y0</td>
+<td style="text-align:left">复制光标所在的那个字符到该行行首的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:left">y$</td>
+<td style="text-align:left">复制光标所在的那个字符到该行行尾的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>p, P</strong></td>
+<td style="text-align:left">p 为将已复制的数据在光标下一行贴上，P 则为贴在游标上一行！ 举例来说，我目前光标在第 20 行，且已经复制了 10 行数据。则按下 p 后， 那 10 行数据会贴在原本的 20 行之后，亦即由 21 行开始贴。但如果是按下 P 呢？ 那么原本的第 20 行会被推到变成 30 行。 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">J</td>
+<td style="text-align:left">将光标所在行与下一行的数据结合成同一行</td>
+</tr>
+<tr>
+<td style="text-align:left">c</td>
+<td style="text-align:left">重复删除多个数据，例如向下删除 10 行，[ 10cj ]</td>
+</tr>
+<tr>
+<td style="text-align:left">u</td>
+<td style="text-align:left">复原前一个动作。(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl]+r</td>
+<td style="text-align:left">重做上一个动作。(常用)</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="一般模式切换到编辑模式的可用的按钮说明"><a class="markdownIt-Anchor" href="#一般模式切换到编辑模式的可用的按钮说明"></a> 一般模式切换到编辑模式的可用的按钮说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">i, I</td>
+<td style="text-align:left">进入输入模式(Insert mode)：i 为『从目前光标所在处输入』， I 为『在目前所在行的第一个非空格符处开始输入』。 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">a, A</td>
+<td style="text-align:left">进入输入模式(Insert mode)：</td>
+</tr>
+<tr>
+<td style="text-align:left">o, O</td>
+<td style="text-align:left">进入输入模式(Insert mode)：这是英文字母 o 的大小写。o 为在目前光标所在的下一行处输入新的一行； O 为在目前光标所在的上一行处输入新的一行！(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">r, R</td>
+<td style="text-align:left">进入取代模式(Replace mode)：r</td>
+</tr>
+<tr>
+<td style="text-align:left">[Esc]</td>
+<td style="text-align:left">退出编辑模式，回到一般模式中(常用)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="一般模式切换到指令行模式的可用的按钮说明"><a class="markdownIt-Anchor" href="#一般模式切换到指令行模式的可用的按钮说明"></a> 一般模式切换到指令行模式的可用的按钮说明</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">:w</td>
+<td style="text-align:left">将编辑的数据写入硬盘档案中(常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">:w!</td>
+<td style="text-align:left">若文件属性为『只读』时，强制写入该档案。不过，到底能不能写入， 还是跟你对该档案的档案权限有关啊！</td>
+</tr>
+<tr>
+<td style="text-align:left">:q</td>
+<td style="text-align:left">离开 vi (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">:q!</td>
+<td style="text-align:left">若曾修改过档案，又不想储存，使用 ! 为强制离开不储存档案。</td>
+</tr>
+<tr>
+<td style="text-align:left">:wq</td>
+<td style="text-align:left">储存后离开，若为 :wq! 则为强制储存后离开 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:left">ZZ</td>
+<td style="text-align:left">这是大写的 Z 喔！如果修改过，保存当前文件，然后退出！效果等同于(保存并退出)</td>
+</tr>
+<tr>
+<td style="text-align:left">ZQ</td>
+<td style="text-align:left">不保存，强制退出。效果等同于 :q!。</td>
+</tr>
+<tr>
+<td style="text-align:left">:w [filename]</td>
+<td style="text-align:left">将编辑的数据储存成另一个档案（类似另存新档）</td>
+</tr>
+<tr>
+<td style="text-align:left">:r [filename]</td>
+<td style="text-align:left">在编辑的数据中，读入另一个档案的数据。亦即将 『filename』 这个档案内容加到游标所在行后面</td>
+</tr>
+<tr>
+<td style="text-align:left">:n1,n2 w [filename]</td>
+<td style="text-align:left">将 n1 到 n2 的内容储存成 filename 这个档案。</td>
+</tr>
+<tr>
+<td style="text-align:left">:! command</td>
+<td style="text-align:left">暂时离开 vi 到指令行模式下执行 command 的显示结果！例如『:! ls /home』即可在 vi 当中察看 /home 底下以 ls 输出的档案信息！</td>
+</tr>
+<tr>
+<td style="text-align:left">:set nu</td>
+<td style="text-align:left">显示行号，设定之后，会在每一行的前缀显示该行的行号</td>
+</tr>
+<tr>
+<td style="text-align:left">:set nonu</td>
+<td style="text-align:left">与 set nu 相反，为取消行号！</td>
+</tr>
+</tbody>
+</table>
+<h4 id="vim键盘图"><a class="markdownIt-Anchor" href="#vim键盘图"></a> vim键盘图</h4>
+<div style="text-align: center">
+<img style="margin: 5px 5px; border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,0.12), 0 2px 10px 0 rgba(34,36,38,0.08);"
+src="vi-vim-cheat-sheet-sch1.gif" srcset="/img/loading.gif" lazyload alt="vim键盘图" width="60%">
+</div>
+<h2 id="tmux"><a class="markdownIt-Anchor" href="#tmux"></a> tmux</h2>
+<h3 id="什么是tmux"><a class="markdownIt-Anchor" href="#什么是tmux"></a> 什么是tmux</h3>
+<p>我们在linux服务器上的工作一般都是通过一个远程的终端连接软件(例如mobaXterm、xShell)连接到远端系统进行操作。在使用过程中，如果要做比较耗时的操作，例如有时候进行编译，或者下载大文件需要比较长的时间，但是网络有时候不稳定等情况会导致连接断开，我们所执行的程序也就中断，tmux就是用来解决之一问题的有效工具。</p>
+<p>tmux中有3种概念，会话(session)，窗口(window)，窗格(pane)。会话有点像是tmux的服务，在后端运行，我们可以通过tmux命令创建这种服务，并且可以通过tmux命令查看，附加到后端运行的会话中。一个会话可以包含多个窗口，一个窗口可以被分割成多个窗格。</p>
+<h3 id="安装方法"><a class="markdownIt-Anchor" href="#安装方法"></a> 安装方法</h3>
+<div class="code-wrapper"><pre><code class="hljs bash">sudo apt install tmux</code></pre></div>
+<h3 id="使用方法-2"><a class="markdownIt-Anchor" href="#使用方法-2"></a> 使用方法</h3>
+<h4 id="会话操作"><a class="markdownIt-Anchor" href="#会话操作"></a> 会话操作</h4>
+<ul>
+<li>
+<p>新建会话</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">tmux new -s [session-name]</code></pre></div>
+</li>
+<li>
+<p>退出会话</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">[Ctrl]+b
+d</code></pre></div>
+</li>
+<li>
+<p>查看会话列表</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">tmux <span class="hljs-built_in">ls</span></code></pre></div>
+</li>
+<li>
+<p>进入会话</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">tmux a -t [session-name]</code></pre></div>
+</li>
+<li>
+<p>销毁会话</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">tmux kill-session -t [session-name]</code></pre></div>
+</li>
+<li>
+<p>销毁会话</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">tmux rename -t [session-name] [new-session-name]</code></pre></div>
+</li>
+</ul>
+<h4 id="窗口操作"><a class="markdownIt-Anchor" href="#窗口操作"></a> 窗口操作</h4>
+<p>一个tmux的会话中可以有多个窗口(window)，每个窗口又可以分割成多个pane(窗格)。我们工作的最小单位其实是窗格。默认情况下在一个window中，只有一个大窗格，占满整个窗口区域。我们在这个区域工作。</p>
+<ul>
+<li>
+<p>新建窗口</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">[Ctrl]+b
+c</code></pre></div>
+<p>默认情况下创建出来的窗口由窗口序号+窗口名字组成，窗口名字可以由上面提到的方法修改，可以看到新创建的窗口后面有*号，表示是当前窗口。</p>
+</li>
+<li>
+<p>切换窗口</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[Ctrl]+b p</td>
+<td style="text-align:left">(previous的首字母) 切换到上一个window。</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl]+b n</td>
+<td style="text-align:left">(next的首字母) 切换到下一个window。</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl]+b 0</td>
+<td style="text-align:left">切换到0号window，依次类推，可换成任意窗口序号</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl]+b w</td>
+<td style="text-align:left">(windows的首字母) 列出当前session所有window，通过上、下键切换窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl]+b l</td>
+<td style="text-align:left">(字母L的小写)相邻的window切换</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>关闭窗口</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">[Ctrl]+b
+&amp;</code></pre></div>
+</li>
+</ul>
+<h4 id="窗格操作"><a class="markdownIt-Anchor" href="#窗格操作"></a> 窗格操作</h4>
+<ul>
+<li>
+<p>垂直分屏</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">[Ctrl]+b
+%</code></pre></div>
+</li>
+<li>
+<p>水平分屏</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">[Ctrl]+b
+<span class="hljs-string">&quot;</span></code></pre></div>
+</li>
+<li>
+<p>切换窗格</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[Ctrl]+b o</td>
+<td style="text-align:left">依次切换当前窗口下的各个pane。</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl]+b Up/Down/Left/Right</td>
+<td style="text-align:left">根据按箭方向选择切换到某个pane。</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl]+b Space</td>
+<td style="text-align:left">对当前窗口下的所有pane重新排列布局，每按一次，换一种样式。</td>
+</tr>
+<tr>
+<td style="text-align:left">[Ctrl]+b z</td>
+<td style="text-align:left">最大化当前pane。再按一次后恢复。</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>关闭窗格</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">[Ctrl]+b
+x</code></pre></div>
+</li>
+</ul>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Technology/" class="category-chain-item">Technology</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Tutorial/" class="category-chain-item">Tutorial</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Technology/">#Technology</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Linux</div>
+      <div>http://example.com/linux/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Deluge Walker</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>December 15, 2021</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>Licensed under</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/docker/" title="Docker">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Docker</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/latex/" title="Latex">
+                        <span class="hidden-mobile">Latex</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

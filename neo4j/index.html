@@ -1,0 +1,912 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/deluge.png">
+  <link rel="icon" href="/img/deluge.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2b3f3d">
+  <meta name="author" content="Deluge Walker">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Neo4j 常用数据库：gStore，Jena，Neo4j，Stardog  1 Neo4j安装  1.1 Windows安装   安装 java JDK：   下载 https:&#x2F;&#x2F;www.oracle.com&#x2F;java&#x2F;technologies&#x2F;javase&#x2F;jdk15-archive-downloads.html   配置环境变量： 设置 --&gt; 系统 --&gt; 关于 --&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Neo4j">
+<meta property="og:url" content="http://example.com/neo4j/index.html">
+<meta property="og:site_name" content="覆舟之水">
+<meta property="og:description" content="Neo4j 常用数据库：gStore，Jena，Neo4j，Stardog  1 Neo4j安装  1.1 Windows安装   安装 java JDK：   下载 https:&#x2F;&#x2F;www.oracle.com&#x2F;java&#x2F;technologies&#x2F;javase&#x2F;jdk15-archive-downloads.html   配置环境变量： 设置 --&gt; 系统 --&gt; 关于 --&amp;gt">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/articles/Neo4j.svg">
+<meta property="article:published_time" content="2021-07-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-30T09:18:56.147Z">
+<meta property="article:author" content="Deluge Walker">
+<meta property="article:tag" content="Technology">
+<meta property="article:tag" content="Database">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/articles/Neo4j.svg">
+  
+  
+  <title>Neo4j - 覆舟之水</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>覆舟之水</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/articles/Neo4j.svg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">Neo4j</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-07-06 00:00" pubdate>
+          July 6, 2021 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Neo4j</h1>
+            
+            <div class="markdown-body">
+              
+              <h1 id="neo4j"><a class="markdownIt-Anchor" href="#neo4j"></a> Neo4j</h1>
+<p><em>常用数据库：gStore，Jena，Neo4j，Stardog</em></p>
+<h2 id="1-neo4j安装"><a class="markdownIt-Anchor" href="#1-neo4j安装"></a> 1 Neo4j安装</h2>
+<h3 id="11-windows安装"><a class="markdownIt-Anchor" href="#11-windows安装"></a> 1.1 Windows安装</h3>
+<ul>
+<li>
+<p>安装 java JDK：</p>
+<ul>
+<li>
+<p>下载<br />
+<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html">https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html</a></p>
+</li>
+<li>
+<p>配置环境变量：<br />
+设置 --&gt; 系统 --&gt; 关于 --&gt; 高级系统设置 --&gt; 环境变量 --&gt; 系统变量 --&gt; 编辑Path</p>
+</li>
+<li>
+<p>查看安装状态</p>
+<div class="code-wrapper"><pre><code class="hljs bash">$ java -version</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>安装 neo4j：</p>
+<ul>
+<li>
+<p>下载(社区版即可)<br />
+<a target="_blank" rel="noopener" href="https://neo4j.com/download-center/">https://neo4j.com/download-center/</a></p>
+</li>
+<li>
+<p>配置环境变量</p>
+</li>
+<li>
+<p>查看安装状态：</p>
+<div class="code-wrapper"><pre><code class="hljs bash">$ neo4j.bat console</code></pre></div>
+<blockquote>
+<p>如果启动失败，很可能是JDK版本问题，JDK16版本过高！</p>
+</blockquote>
+</li>
+<li>
+<p>Web服务登录<br />
+默认账号密码均为<code>neo4j</code>，首次登陆会提示修改密码。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-linux安装"><a class="markdownIt-Anchor" href="#12-linux安装"></a> 1.2 Linux安装</h3>
+<ul>
+<li>
+<p>安装Java环境</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">$ sudo apt update
+$ sudo apt install openjdk-11-jdk</code></pre></div>
+</li>
+<li>
+<p>安装Neo4j</p>
+<ul>
+<li>去<a target="_blank" rel="noopener" href="https://neo4j.com/download-center/#community">Neo4j官网</a>下载Linux的安装包<code>neo4j-community-4.2.7-unix</code></li>
+<li>解压该文件即可。<div class="code-wrapper"><pre><code class="hljs bash">tar -xf neo4j-community-4.2.7-unix.tar.gz</code></pre></div>
+</li>
+<li>进入解压路径中的conf，修改neo4j.conf文件。<div class="code-wrapper"><pre><code class="hljs bash">sudo vim neo4j.conf</code></pre></div>
+<ul>
+<li>将第22行<code>dbms.directories.import=import</code>前加上注释</li>
+<li>修改45行为<code>dbms.memory.heap.initial_size=1g</code></li>
+<li>修改46行为<code>dbms.memory.heap.max_size=2g</code></li>
+<li>修改51行为<code>dbms.memory.pagecache.size=10g</code></li>
+<li>修改70行为<code>dbms.default_listen_address=0.0.0.0</code></li>
+<li>修改229行为<code>dbms.security.allow_csv_import_from_file_urls=true</code></li>
+<li>修改249行为<code>dbms.read_only=false</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-neo4j命令"><a class="markdownIt-Anchor" href="#2-neo4j命令"></a> 2 Neo4j命令</h2>
+<h3 id="21-基本操作增删改查"><a class="markdownIt-Anchor" href="#21-基本操作增删改查"></a> 2.1 基本操作(增删改查)</h3>
+<h4 id="211-创建"><a class="markdownIt-Anchor" href="#211-创建"></a> 2.1.1 创建</h4>
+<ul>
+<li>
+<p>创建节点</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher"># (n:标签 &#123;属性1:&#x27;*&#x27;, 属性2:*&#125;)  属性值*：数值可不打引号，英文字母或汉字必须打引号
+create (n:Person&#123;name:&#x27;我&#x27;,age:24&#125;)</code></pre></div>
+</li>
+<li>
+<p>创建带有关系属性的节点</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">#  (p:标签 &#123;属性1:&#x27;*&#x27;, 属性2:*&#125;)-[:关系&#123;属性:&#x27;*&#x27;&#125;]-&gt;(n：标签 &#123;属性1:&#x27;*&#x27;, 属性2:*&#125;)
+create (p:Person&#123;name:&#x27;我&#x27;,age:24&#125;)-[:同学&#123;学校:&#x27;高中&#x27;&#125;]-&gt;(n:Person&#123;name:&#x27;小明&#x27;,age:23&#125;)</code></pre></div>
+</li>
+</ul>
+<h4 id="212-删除"><a class="markdownIt-Anchor" href="#212-删除"></a> 2.1.2 删除</h4>
+<ul>
+<li>
+<p>删除节点，带有关系的节点无法用该命令删除</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">match (n:Person&#123;name:&#x27;我&#x27;&#125;) delete n</code></pre></div>
+</li>
+<li>
+<p>删除关系</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">match (p:Person&#123;name:&#x27;我&#x27;,age:24&#125;)-[f:同学]-&gt;(n:Person&#123;name:&#x27;小明&#x27;,age:23&#125;) delete f,n,p</code></pre></div>
+</li>
+</ul>
+<h4 id="213-修改"><a class="markdownIt-Anchor" href="#213-修改"></a> 2.1.3 修改</h4>
+<ul>
+<li>
+<p>给某节点增加标签</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">match (t:Person) where id(t)=0 set t:好人 return t</code></pre></div>
+</li>
+<li>
+<p>给某节点增加或者更改属性</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">match (t:Person) where id(t)=0 set t.战斗力=200 return t</code></pre></div>
+</li>
+</ul>
+<h4 id="214-查询"><a class="markdownIt-Anchor" href="#214-查询"></a> 2.1.4 查询</h4>
+<p>Cypher使用match子句查询数据，是Cypher最基本的查询子句。在查询数据时，使用Match子句指定搜索的模式，这是从Neo4j数据库查询数据的最主要的方法。match子句之后通常会跟着where子句，向模式中添加过滤性的谓词，用于对数据进行过滤。在查询数据时，查询语句分为多个部分，with子句用于对上一个查询部分的结果进行处理，以输出到下一个查询部分。</p>
+<ul>
+<li>
+<p>节点查询<br />
+对节点进行查询，是查询graph的基本操作，节点具有标签和属性，Match查询不仅能够按照标签对节点进行查询，还能按照属性对节点进行查询。 当没有指定节点的标签或属性时，默认是选择节点全部的标签和属性。</p>
+<ul>
+<li>
+<p>查询所有节点<br />
+仅仅指定一个节点的模式，没有标签（Lable）和属性，表示查询所有的节点：</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (n)
+RETURN n</code></pre></div>
+</li>
+<li>
+<p>查询带有特定标签的节点<br />
+当模式中指定标签时，表示只查询带有特定标签的节点，有多个标签的节点，只要含有指定的标签，就成功匹配，绑定该节点。</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (movie:Movie)
+RETURN movie.title</code></pre></div>
+</li>
+<li>
+<p>查询相关的任意节点<br />
+指定一个节点，节点的name属性是’Oliver Stone’，查询跟该节点相关的其他节点：</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (director &#123; name: &#x27;Oliver Stone&#x27; &#125;)--(movie)
+RETURN movie.title</code></pre></div>
+</li>
+<li>
+<p>查询相关的特定节点<br />
+指定一个节点，查询跟节点相关的节点，并指定相关节点的标签</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (:Person &#123; name: &#x27;Oliver Stone&#x27; &#125;)--(movie:Movie)
+RETURN movie.title</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>关系查询<br />
+对关系进行查询，关系的模式是由两个节点来决定的。</p>
+<ul>
+<li>
+<p>指定关系的方向来查询节点<br />
+对于标签是Person，并且name属性是’Oliver Stone’的节点，该节点指向另外一个节点movie：</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (:Person &#123; name: &#x27;Oliver Stone&#x27; &#125;)--&gt;(movie)
+RETURN movie.title</code></pre></div>
+</li>
+<li>
+<p>查询关系的类型<br />
+在查询关系时，可以在match子句中指定关系变量，后续子句可以引用该变量，例如，使用type()函数查看关系的类型：</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (:Person &#123; name: &#x27;Oliver Stone&#x27; &#125;)-[r]-&gt;(movie)
+RETURN type(r)</code></pre></div>
+</li>
+<li>
+<p>匹配关系类型<br />
+在匹配关系时，可以指定关系的类型</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (wallstreet:Movie &#123; title: &#x27;Wall Street&#x27; &#125;)&lt;-[:ACTED_IN]-(actor)
+RETURN actor.name</code></pre></div>
+</li>
+<li>
+<p>匹配多种关系类型<br />
+在匹配关系时，可以指定多种关系的类型，只需要匹配其中任意一个关系类型就匹配成功</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (wallstreet &#123; title: &#x27;Wall Street&#x27; &#125;)&lt;-[:ACTED_IN|:DIRECTED]-(person)
+RETURN person.name</code></pre></div>
+</li>
+<li>
+<p>匹配关系类型，并指定关系变量</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (wallstreet &#123; title: &#x27;Wall Street&#x27; &#125;)&lt;-[r:ACTED_IN]-(actor)
+RETURN r.role</code></pre></div>
+</li>
+<li>
+<p>匹配多个关系</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (charlie &#123; name: &#x27;Charlie Sheen&#x27; &#125;)-[:ACTED_IN]-&gt;(movie)&lt;-[:DIRECTED]-(director)
+RETURN movie.title, director.name</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>匹配路径<br />
+路径是节点和关系交替组合构成的序列，图中必须满足路径指定的模式，才能返回路径中的元素。</p>
+<ul>
+<li>
+<p>对变长路径的查询</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH (martin &#123; name: &#x27;Charlie Sheen&#x27; &#125;)-[:ACTED_IN*1..3]-(movie:Movie)
+RETURN movie.title</code></pre></div>
+</li>
+<li>
+<p>路径变量</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH p =(actor &#123; name: &#x27;Charlie Sheen&#x27; &#125;)-[:ACTED_IN*2]-(co_actor)
+RETURN relationships(p),p</code></pre></div>
+</li>
+<li>
+<p>根据路径的属性进行匹配</p>
+<div class="code-wrapper"><pre><code class="hljs Cypher">MATCH p =(charlie:Person)-[* &#123; blocked:false &#125;]-(martin:Person)
+WHERE charlie.name = &#x27;Charlie Sheen&#x27; AND martin.name = &#x27;Martin Sheen&#x27;
+RETURN p</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="215-清空数据库"><a class="markdownIt-Anchor" href="#215-清空数据库"></a> 2.1.5 清空数据库</h4>
+  <div class="code-wrapper"><pre><code class="hljs Cypher">match (n)
+detach delete n</code></pre></div>
+<h2 id="3-数据库迁移"><a class="markdownIt-Anchor" href="#3-数据库迁移"></a> 3 数据库迁移</h2>
+<ul>
+<li>
+<p>导出数据库(dump database)</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">$ neo4j-admin dump --database=&lt;database&gt; --to=&lt;destination-path&gt;</code></pre></div>
+</li>
+<li>
+<p>导入数据库(load database)</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">$ neo4j-admin load --database=&lt;database&gt; --from=&lt;archive-path&gt;  --force</code></pre></div>
+</li>
+</ul>
+<h2 id="4-py2neo"><a class="markdownIt-Anchor" href="#4-py2neo"></a> 4 Py2neo</h2>
+<ul>
+<li>
+<p>安装：</p>
+  <div class="code-wrapper"><pre><code class="hljs bash">$ pip install py2neo</code></pre></div>
+</li>
+<li>
+<p>使用</p>
+  <div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> py2neo <span class="hljs-keyword">import</span> Graph, Node, Relationship
+
+<span class="hljs-comment"># 创建节点及关系的命令示例：</span>
+head_node = Node(head_label, name=node_name))
+tail_node = Node(tail_label, name=node_name))
+relation = Relationship(head_node, relation, tail_node)
+
+self.graph.create(head_node)
+self.graph.create(tail_node)
+self.graph.create(relation)</code></pre></div>
+</li>
+</ul>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Technology/" class="category-chain-item">Technology</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Tutorial/" class="category-chain-item">Tutorial</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Technology/">#Technology</a>
+      
+        <a href="/tags/Database/">#Database</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Neo4j</div>
+      <div>http://example.com/neo4j/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Deluge Walker</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>July 6, 2021</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>Licensed under</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/latex/" title="Latex">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Latex</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/ssh/" title="SSH">
+                        <span class="hidden-mobile">SSH</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
